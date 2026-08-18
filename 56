@@ -1,0 +1,383 @@
+[
+    {
+        "dns": {
+            "queryStrategy": "UseIP",
+            "servers": [
+                "1.1.1.1",
+                "1.0.0.1"
+            ]
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "socks",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ],
+                    "enabled": true,
+                    "routeOnly": false
+                },
+                "tag": "socks"
+            },
+            {
+                "listen": "127.0.0.1",
+                "port": 10809,
+                "protocol": "http",
+                "settings": {
+                    "allowTransparent": false
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ],
+                    "enabled": true,
+                    "routeOnly": false
+                },
+                "tag": "http"
+            }
+        ],
+        "meta": null,
+        "outbounds": [
+            {
+                "protocol": "hysteria",
+                "settings": {
+                    "address": "ee.i-love-russia.online",
+                    "port": 443,
+                    "version": 2
+                },
+                "streamSettings": {
+                    "hysteriaSettings": {
+                        "auth": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                        "version": 2
+                    },
+                    "network": "hysteria",
+                    "security": "tls",
+                    "tlsSettings": {
+                        "alpn": [
+                            "h3"
+                        ],
+                        "fingerprint": "firefox",
+                        "serverName": "ee.i-love-russia.online"
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            },
+            {
+                "protocol": "blackhole",
+                "tag": "block"
+            }
+        ],
+        "remarks": "🇪🇪 Эстония | Hysteria | Игровой 🔥",
+        "routing": {
+            "domainMatcher": "hybrid",
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "outboundTag": "direct",
+                    "protocol": [
+                        "bittorrent"
+                    ],
+                    "type": "field"
+                },
+                {
+                    "domain": [
+                        "domain:2ip.ru",
+                        "domain:2ip.io",
+                        "domain:whoer.net",
+                        "domain:yoomoney.ru",
+                        "domain:browserleaks.com"
+                    ],
+                    "outboundTag": "proxy",
+                    "type": "field"
+                },
+                {
+                    "domain": [
+                        "geosite:category-ru",
+                        "domain:ru",
+                        "domain:su"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "10.0.0.0/8",
+                        "100.64.0.0/10",
+                        "127.0.0.0/8",
+                        "169.254.0.0/16",
+                        "172.16.0.0/12",
+                        "192.168.0.0/16",
+                        "::1/128",
+                        "fc00::/7",
+                        "fe80::/10"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "queryStrategy": "UseIP",
+            "servers": [
+                "1.1.1.1",
+                "1.0.0.1"
+            ]
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "socks",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ],
+                    "enabled": true,
+                    "routeOnly": false
+                },
+                "tag": "socks"
+            },
+            {
+                "listen": "127.0.0.1",
+                "port": 10809,
+                "protocol": "http",
+                "settings": {
+                    "allowTransparent": false
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ],
+                    "enabled": true,
+                    "routeOnly": false
+                },
+                "tag": "http"
+            }
+        ],
+        "meta": null,
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "fi.i-love-russia.online",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "encryption": "none",
+                                    "flow": "xtls-rprx-vision",
+                                    "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "tcp",
+                    "realitySettings": {
+                        "fingerprint": "firefox",
+                        "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+                        "serverName": "fi.i-love-russia.online",
+                        "shortId": "1b4e086bf0a1b1f4",
+                        "spiderX": "/"
+                    },
+                    "security": "reality",
+                    "tcpSettings": {}
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            },
+            {
+                "protocol": "blackhole",
+                "tag": "block"
+            }
+        ],
+        "remarks": "🇫🇮 Финляндия",
+        "routing": {
+            "domainMatcher": "hybrid",
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "outboundTag": "direct",
+                    "protocol": [
+                        "bittorrent"
+                    ],
+                    "type": "field"
+                },
+                {
+                    "domain": [
+                        "domain:2ip.ru",
+                        "domain:2ip.io",
+                        "domain:whoer.net",
+                        "domain:yoomoney.ru",
+                        "domain:browserleaks.com"
+                    ],
+                    "outboundTag": "proxy",
+                    "type": "field"
+                },
+                {
+                    "domain": [
+                        "geosite:category-ru",
+                        "domain:ru",
+                        "domain:su"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "10.0.0.0/8",
+                        "100.64.0.0/10",
+                        "127.0.0.0/8",
+                        "169.254.0.0/16",
+                        "172.16.0.0/12",
+                        "192.168.0.0/16",
+                        "::1/128",
+                        "fc00::/7",
+                        "fe80::/10"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "queryStrategy": "UseIP",
+            "servers": [
+                "1.1.1.1",
+                "8.8.8.8",
+                "1.0.0.1",
+                "8.8.4.4"
+            ]
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "socks",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ],
+                    "enabled": true,
+                    "routeOnly": false
+                },
+                "tag": "socks"
+            },
+            {
+                "listen": "127.0.0.1",
+                "port": 10809,
+                "protocol": "http",
+                "settings": {
+                    "allowTransparent": false
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ],
+                    "enabled": true,
+                    "routeOnly": false
+                },
+                "tag": "http"
+            }
+        ],
+        "meta": null,
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "friendlynode.site",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "encryption": "none",
+                                    "flow": "",
+                                    "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "security": "tls",
+                    "tlsSettings": {
+                        "alpn": [
+                            "http/1.1"
+                        ],
+                        "fingerprint": "firefox",
+                        "serverName": "friendlynode.site"
+                    },
+                    "wsSettings": {
+                        "headers": {},
+                        "host": "friendlynode.site",
+                        "path": "/stream/751394/socket"
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            },
+            {
+                "protocol": "blackhole",
+                "tag": "block"
+            }
+        ],
+        "remarks": "🇫🇮 Белые списки 1",
+        "routing": {
+            "domainMatcher": "hybrid",
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "outboundTag": "direct",
+                    "protocol": [
+                        "bittorrent"
+                    ],
+                    "type": "field"
+                }
+            ]
+        }
+    }
+]
