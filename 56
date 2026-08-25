@@ -488,266 +488,268 @@
             }
         ],
         "remarks": "🇩🇪 Белые списки 1"
-    }
-    {
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ],
-    "queryStrategy": "UseIP"
-  },
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "ip": [
-          "geoip:private"
-        ],
-        "type": "field",
-        "outboundTag": "direct"
-      }
-    ],
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch"
-  },
-  "inbounds": [
-    {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": {
-        "udp": true,
-        "auth": "noauth"
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
     },
     {
-      "tag": "http",
-      "port": 10809,
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "vpn.inkeroshop.site",
-            "port": 443,
-            "users": [
-              {
-                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
-                "encryption": "none",
-                "flow": ""
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "/stream/751394/socket",
-          "headers": {
-            "Host": "vpn.inkeroshop.site"
-          }
+        "dns": {
+            "servers": [
+                "1.1.1.1",
+                "1.0.0.1"
+            ],
+            "queryStrategy": "UseIP"
         },
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "vpn.inkeroshop.site",
-          "fingerprint": "chrome",
-          "alpn": [
-            "http/1.1"
-          ]
-        }
-      }
-    },
-    {
-      "tag": "direct",
-      "protocol": "freedom"
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole"
-    }
-  ],
-  "remarks": "  🇳🇱Белые списки 2 🛡 ",
-  "meta": {
-    "serverDescription": "Для мобильного интернета"
-  },
-  {
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ],
-    "queryStrategy": "UseIP"
-  },
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "ip": [
-          "geoip:private"
-        ],
-        "type": "field",
-        "outboundTag": "direct"
-      }
-    ],
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch"
-  },
-  "inbounds": [
-    {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": {
-        "udp": true,
-        "auth": "noauth"
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
-    },
-    {
-      "tag": "http",
-      "port": 10809,
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "188.72.103.3",
-            "port": 443,
-            "users": [
-              {
-                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
-                "encryption": "mlkem768x25519plus.random.0rtt.4fCwOXscpNqAp_Wac_pXudyPGhLGOJQ8yIUWvbKZCiq4JLA3NBusALHGHcu-d6o3X8sQHAwaxDxZA9bJCllWYFCzo3WFeylkrce87pEhZkND0aQgWBZwiMis4LQ_Echxz7ajprRlMavEltKpubmYPvyfhaFMG6NtWlYwqFU9oJp4g9KjoJJtlcrNbgkJr7Eko9fNqVEFwgB7SvdY5qEH2snMnNaVx9lB5XEDfdc1VNgTg9ZAUDgPtgE3raJZz7MICRNvXXxhKzssvvxoBIwm5BzNyFkLDSciiIp9UsmN7aY5ipFfporEi9czgYsk7-us-oar5AEdHHi-KzlBS-UVrlV40ROmMSTI--NjsDZFGVhmgmES8Dp8yhFCfuySwOgzCpW1UMigqTtN-BQqCZIuysIKZ3lxhzSsw-lrKMwADYeJqzCWlCRwBKcgXWQKKlK3FdcI68kZzcVsLMOImuESSfsL_HShQ7I9tuUJY0aaKVQbVrp5gQKbeoaNltsuaJdM52Yy3JBhS4m2c2BQQOcvBtCnGBQfvvilmmEobzWfFxJj5DYVJqxEIjIrJ-Y7pEabD4NR63yX94uj_qxit5V6nbElwPisE4LOd6Q-bsqTKmQf8RBqZ9FjmOisjfYPTOqjuMG0QlgvTwEWHlp7o-TCxZYlkzib7zFxxRdU6iGI9Qa3DsmNJQY_L8psrXM0ABBn6jaIn5YNI0St9GbCdeCA_6THxYaYPqcsRrW57bSlRBLD1JWuzXO0s0sJFbICsIpr5-QbKoC8rtzLxRdQcQlMLZMTKIRr50aYJBA4q-JzLUFgJZhsl3e_UzW_3pkREzwGWhqs6ZNdKSiIjRKc9vhKhIPG3vM4P1kRhNpAWqZaG_Vf-htXv1Fx3MPFugjJK6U29poYyNjD5QghthVRvqZyulGowtIJTLSUtGeTpVeoOxMqAILBnwe-wVi8DhtMKrnPawTCYHNFEFkv_fJhnwuGhvl92pMMEaZjpBIye5OQeDoa_0h4Dkcaw6JuSmBncDg2UPW2i2FZz7gmdoe7ykUHLHmDzmmcQDwHDyEIuRiAohCW4pBcUaaj5ho3KdqsTKy_KZVQrlR3QUkAfiahuWdLJdoB6ohSbVMrZ-Aj47t9d9mGtYnIfvuQ4uobHHst4aAXIPwRdpAJD0FIK2eZWpiiAVRAqoc6gqC_L_igoqGHbytW41nNZQQKnNR_owVx45NcznoczOagdSyiWCdwnMNzmJJPrJG9w2Nt8rSXwRmSckqpuJa_19oIZGlU4NklWeS4JPZDpJrKOftZKCfLQdnALAtsZ2Qhwmc8cgxCvYl2LxdsnVtBQ7FnS4Fs0rOTOxULP-ChTYPInjAN-ZpBelM2V0og3gWre4aIsUds4htgXQgkqTIPjhCsJ2kmwyeXIBNnXZc6lIcgaNY4wvUGE4jFEeN206O_apyCT2tycZNawgqFaaajy9Scpzew2_CKmzNsFkNTcRi8EfqUsvS_vOOpaHpRsTtZrZMjDxontwA5ObwifOHJWuAkoKZFbkGos9XOzt2YC7bwO5R_v_3MHCgNCKTApzBQT4cDVlJy4GtFsWI",
-                "flow": ""
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "xhttpSettings": {
-          "mode": "packet-up",
-          "host": "st1.cdninkerov.ru",
-          "path": "/img/media/preview",
-          "extra": {
-            "seqKey": "sq",
-            "sessionKey": "sid",
-            "noSSEHeader": true,
-            "xPaddingKey": "_dc",
-            "noGRPCHeader": true,
-            "seqPlacement": "cookie",
-            "sessionIDKey": "sid",
-            "uplinkDataKey": "X-Data",
-            "xPaddingBytes": "100-500",
-            "sessionIDTable": "hex",
-            "xPaddingHeader": "X-CSRFToken",
-            "xPaddingMethod": "tokenish",
-            "sessionIDLength": "24-28",
-            "uplinkChunkSize": "20000-28000",
-            "sessionPlacement": "cookie",
-            "uplinkHTTPMethod": "GET",
-            "xPaddingObfsMode": true,
-            "xPaddingPlacement": "header",
-            "scMaxEachPostBytes": 30000,
-            "sessionIDPlacement": "cookie",
-            "uplinkDataPlacement": "header",
-            "scMinPostsIntervalMs": 30
-          }
+        "routing": {
+            "rules": [
+                {
+                    "type": "field",
+                    "protocol": [
+                        "bittorrent"
+                    ],
+                    "outboundTag": "direct"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "type": "field",
+                    "outboundTag": "direct"
+                }
+            ],
+            "domainMatcher": "hybrid",
+            "domainStrategy": "IPIfNonMatch"
         },
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "st1.cdninkerov.ru",
-          "fingerprint": "chrome",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
+        "inbounds": [
+            {
+                "tag": "socks",
+                "port": 10808,
+                "listen": "127.0.0.1",
+                "protocol": "socks",
+                "settings": {
+                    "udp": true,
+                    "auth": "noauth"
+                },
+                "sniffing": {
+                    "enabled": true,
+                    "routeOnly": false,
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ]
+                }
+            },
+            {
+                "tag": "http",
+                "port": 10809,
+                "listen": "127.0.0.1",
+                "protocol": "http",
+                "settings": {
+                    "allowTransparent": false
+                },
+                "sniffing": {
+                    "enabled": true,
+                    "routeOnly": false,
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ]
+                }
+            }
+        ],
+        "outbounds": [
+            {
+                "tag": "proxy",
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "vpn.inkeroshop.site",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                                    "encryption": "none",
+                                    "flow": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "wsSettings": {
+                        "path": "/stream/751394/socket",
+                        "headers": {
+                            "Host": "vpn.inkeroshop.site"
+                        }
+                    },
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "vpn.inkeroshop.site",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    }
+                }
+            },
+            {
+                "tag": "direct",
+                "protocol": "freedom"
+            },
+            {
+                "tag": "block",
+                "protocol": "blackhole"
+            }
+        ],
+        "remarks": "  🇳🇱Белые списки 2 🛡 ",
+        "meta": {
+            "serverDescription": "Для мобильного интернета"
         }
-      },
-      "mux": {
-        "enabled": false
-      }
     },
     {
-      "tag": "direct",
-      "protocol": "freedom"
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole"
+        "dns": {
+            "servers": [
+                "1.1.1.1",
+                "1.0.0.1"
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "routing": {
+            "rules": [
+                {
+                    "type": "field",
+                    "protocol": [
+                        "bittorrent"
+                    ],
+                    "outboundTag": "direct"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "type": "field",
+                    "outboundTag": "direct"
+                }
+            ],
+            "domainMatcher": "hybrid",
+            "domainStrategy": "IPIfNonMatch"
+        },
+        "inbounds": [
+            {
+                "tag": "socks",
+                "port": 10808,
+                "listen": "127.0.0.1",
+                "protocol": "socks",
+                "settings": {
+                    "udp": true,
+                    "auth": "noauth"
+                },
+                "sniffing": {
+                    "enabled": true,
+                    "routeOnly": false,
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ]
+                }
+            },
+            {
+                "tag": "http",
+                "port": 10809,
+                "listen": "127.0.0.1",
+                "protocol": "http",
+                "settings": {
+                    "allowTransparent": false
+                },
+                "sniffing": {
+                    "enabled": true,
+                    "routeOnly": false,
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "quic"
+                    ]
+                }
+            }
+        ],
+        "outbounds": [
+            {
+                "tag": "proxy",
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "188.72.103.3",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                                    "encryption": "mlkem768x25519plus.random.0rtt.4fCwOXscpNqAp_Wac_pXudyPGhLGOJQ8yIUWvbKZCiq4JLA3NBusALHGHcu-d6o3X8sQHAwaxDxZA9bJCllWYFCzo3WFeylkrce87pEhZkND0aQgWBZwiMis4LQ_Echxz7ajprRlMavEltKpubmYPvyfhaFMG6NtWlYwqFU9oJp4g9KjoJJtlcrNbgkJr7Eko9fNqVEFwgB7SvdY5qEH2snMnNaVx9lB5XEDfdc1VNgTg9ZAUDgPtgE3raJZz7MICRNvXXxhKzssvvxoBIwm5BzNyFkLDSciiIp9UsmN7aY5ipFfporEi9czgYsk7-us-oar5AEdHHi-KzlBS-UVrlV40ROmMSTI--NjsDZFGVhmgmES8Dp8yhFCfuySwOgzCpW1UMigqTtN-BQqCZIuysIKZ3lxhzSsw-lrKMwADYeJqzCWlCRwBKcgXWQKKlK3FdcI68kZzcVsLMOImuESSfsL_HShQ7I9tuUJY0aaKVQbVrp5gQKbeoaNltsuaJdM52Yy3JBhS4m2c2BQQOcvBtCnGBQfvvilmmEobzWfFxJj5DYVJqxEIjIrJ-Y7pEabD4NR63yX94uj_qxit5V6nbElwPisE4LOd6Q-bsqTKmQf8RBqZ9FjmOisjfYPTOqjuMG0QlgvTwEWHlp7o-TCxZYlkzib7zFxxRdU6iGI9Qa3DsmNJQY_L8psrXM0ABBn6jaIn5YNI0St9GbCdeCA_6THxYaYPqcsRrW57bSlRBLD1JWuzXO0s0sJFbICsIpr5-QbKoC8rtzLxRdQcQlMLZMTKIRr50aYJBA4q-JzLUFgJZhsl3e_UzW_3pkREzwGWhqs6ZNdKSiIjRKc9vhKhIPG3vM4P1kRhNpAWqZaG_Vf-htXv1Fx3MPFugjJK6U29poYyNjD5QghthVRvqZyulGowtIJTLSUtGeTpVeoOxMqAILBnwe-wVi8DhtMKrnPawTCYHNFEFkv_fJhnwuGhvl92pMMEaZjpBIye5OQeDoa_0h4Dkcaw6JuSmBncDg2UPW2i2FZz7gmdoe7ykUHLHmDzmmcQDwHDyEIuRiAohCW4pBcUaaj5ho3KdqsTKy_KZVQrlR3QUkAfiahuWdLJdoB6ohSbVMrZ-Aj47t9d9mGtYnIfvuQ4uobHHst4aAXIPwRdpAJD0FIK2eZWpiiAVRAqoc6gqC_L_igoqGHbytW41nNZQQKnNR_owVx45NcznoczOagdSyiWCdwnMNzmJJPrJG9w2Nt8rSXwRmSckqpuJa_19oIZGlU4NklWeS4JPZDpJrKOftZKCfLQdnALAtsZ2Qhwmc8cgxCvYl2LxdsnVtBQ7FnS4Fs0rOTOxULP-ChTYPInjAN-ZpBelM2V0og3gWre4aIsUds4htgXQgkqTIPjhCsJ2kmwyeXIBNnXZc6lIcgaNY4wvUGE4jFEeN206O_apyCT2tycZNawgqFaaajy9Scpzew2_CKmzNsFkNTcRi8EfqUsvS_vOOpaHpRsTtZrZMjDxontwA5ObwifOHJWuAkoKZFbkGos9XOzt2YC7bwO5R_v_3MHCgNCKTApzBQT4cDVlJy4GtFsWI",
+                                    "flow": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "xhttp",
+                    "xhttpSettings": {
+                        "mode": "packet-up",
+                        "host": "st1.cdninkerov.ru",
+                        "path": "/img/media/preview",
+                        "extra": {
+                            "seqKey": "sq",
+                            "sessionKey": "sid",
+                            "noSSEHeader": true,
+                            "xPaddingKey": "_dc",
+                            "noGRPCHeader": true,
+                            "seqPlacement": "cookie",
+                            "sessionIDKey": "sid",
+                            "uplinkDataKey": "X-Data",
+                            "xPaddingBytes": "100-500",
+                            "sessionIDTable": "hex",
+                            "xPaddingHeader": "X-CSRFToken",
+                            "xPaddingMethod": "tokenish",
+                            "sessionIDLength": "24-28",
+                            "uplinkChunkSize": "20000-28000",
+                            "sessionPlacement": "cookie",
+                            "uplinkHTTPMethod": "GET",
+                            "xPaddingObfsMode": true,
+                            "xPaddingPlacement": "header",
+                            "scMaxEachPostBytes": 30000,
+                            "sessionIDPlacement": "cookie",
+                            "uplinkDataPlacement": "header",
+                            "scMinPostsIntervalMs": 30
+                        }
+                    },
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "st1.cdninkerov.ru",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "h2",
+                            "http/1.1"
+                        ]
+                    }
+                },
+                "mux": {
+                    "enabled": false
+                }
+            },
+            {
+                "tag": "direct",
+                "protocol": "freedom"
+            },
+            {
+                "tag": "block",
+                "protocol": "blackhole"
+            }
+        ],
+        "remarks": "🇷🇺 БЕЛЫЕ СПИСКИ 3",
+        "meta": {
+            "serverDescription": "Авто, для мобильной связи"
+        }
     }
-  ],
-  "remarks": "🇷🇺 БЕЛЫЕ СПИСКИ 3",
-  "meta": {
-    "serverDescription": "Авто, для мобильной связи"
-  }
 ]
