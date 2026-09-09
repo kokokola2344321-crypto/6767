@@ -1,290 +1,1253 @@
 [
   {
-    "remarks": "🇪🇺 Самый быстрый",
-    "dns": {
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "1.1.1.1",
-        "https://dns.adguard.com/dns-query"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
+  "remarks": "🇪🇺 Самый быстрый",
+  "dns": {
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "https://dns.adguard.com/dns-query"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
       },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "log": {
-      "dnsLog": true,
-      "loglevel": "warning"
+      "sniffing": {
+        "destOverride": ["http", "tls", "quic"],
+        "enabled": true,
+        "routeOnly": false
+      },
+      "tag": "socks"
     },
-    "outbounds": [
-      {
-        "tag": "proxy-1",
-        "protocol": "hysteria",
-        "settings": {
-          "address": "ee.i-love-russia.online",
-          "port": 443,
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "destOverride": ["http", "tls", "quic"],
+        "enabled": true,
+        "routeOnly": false
+      },
+      "tag": "http"
+    }
+  ],
+  "log": {
+    "dnsLog": true,
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "tag": "proxy-1",
+      "protocol": "hysteria",
+      "settings": {
+        "address": "ee.i-love-russia.online",
+        "port": 443,
+        "version": 2
+      },
+      "streamSettings": {
+        "hysteriaSettings": {
+          "auth": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
           "version": 2
         },
-        "streamSettings": {
-          "hysteriaSettings": {
-            "auth": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": ["h3"],
-            "enableSessionResumption": false,
-            "fingerprint": "firefox",
-            "serverName": "ee.i-love-russia.online"
-          }
+        "network": "hysteria",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": ["h3"],
+          "enableSessionResumption": false,
+          "fingerprint": "firefox",
+          "serverName": "ee.i-love-russia.online"
         }
-      },
-      {
-        "tag": "proxy-2",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "de.cdninkerov.ru",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "tcpSettings": {},
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "max.ru",
-            "publicKey": "DQtOPOgsbG1e5sSLeiJ3s9q2gVvB3tnUNNLth9fkCgA",
-            "shortId": "95dd58da08cfd6b1",
-            "fingerprint": "firefox"
+      }
+    },
+    {
+      "tag": "proxy-2",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "de.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
           }
-        }
+        ]
       },
-      {
-        "tag": "proxy-3",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "lv.i-love-russia.online",
-              "port": 443,
-              "users": [
-                {
-                  "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "tcpSettings": {},
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "lv.i-love-russia.online",
-            "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
-            "shortId": "1b4e086bf0a1b1f4",
-            "spiderX": "/",
-            "fingerprint": "firefox"
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "DQtOPOgsbG1e5sSLeiJ3s9q2gVvB3tnUNNLth9fkCgA",
+          "shortId": "95dd58da08cfd6b1",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-3",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "lv.i-love-russia.online",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
           }
-        }
+        ]
       },
-      {
-        "tag": "proxy-4",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "fi.i-love-russia.online",
-              "port": 443,
-              "users": [
-                {
-                  "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "tcpSettings": {},
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "fi.i-love-russia.online",
-            "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
-            "shortId": "1b4e086bf0a1b1f4",
-            "spiderX": "/",
-            "fingerprint": "firefox"
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "lv.i-love-russia.online",
+          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+          "shortId": "1b4e086bf0a1b1f4",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-4",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "fi.i-love-russia.online",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
           }
-        }
+        ]
       },
-      {
-        "tag": "proxy-5",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "friendlynode.ru",
-              "port": 443,
-              "users": [
-                {
-                  "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "xhttpSettings": {
-            "mode": "auto",
-            "host": "friendlynode.ru",
-            "path": "/api/v2/2aff7e3e"
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "friendlynode.ru",
-            "fingerprint": "firefox",
-            "alpn": ["h2", "http/1.1"]
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "fi.i-love-russia.online",
+          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+          "shortId": "1b4e086bf0a1b1f4",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-5",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "friendlynode.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
           }
-        }
+        ]
       },
-      {
-        "tag": "proxy-6",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "vpn.inkeroshop.site",
-              "port": 443,
-              "users": [
-                {
-                  "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
-                  "encryption": "none",
-                  "flow": ""
-                }
-              ]
-            }
-          ]
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "auto",
+          "host": "friendlynode.ru",
+          "path": "/api/v2/2aff7e3e"
         },
-        "streamSettings": {
-          "network": "ws",
-          "wsSettings": {
-            "path": "/stream/751394/socket",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "friendlynode.ru",
+          "fingerprint": "firefox",
+          "alpn": ["h2", "http/1.1"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-6",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "vpn.inkeroshop.site",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/stream/751394/socket",
+          "headers": {
+            "Host": "vpn.inkeroshop.site"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "vpn.inkeroshop.site",
+          "fingerprint": "chrome",
+          "alpn": ["http/1.1"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-7",
+      "protocol": "hysteria",
+      "settings": {
+        "address": "ee.i-love-russia.online",
+        "port": 443,
+        "version": 2
+      },
+      "streamSettings": {
+        "hysteriaSettings": {
+          "auth": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+          "version": 2
+        },
+        "network": "hysteria",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": ["h3"],
+          "enableSessionResumption": false,
+          "fingerprint": "firefox",
+          "serverName": "ee.i-love-russia.online"
+        }
+      }
+    },
+    {
+      "tag": "proxy-8",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "de2.i-love-russia.online",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "de2.i-love-russia.online",
+          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+          "shortId": "1b4e086bf0a1b1f4",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-9",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "lv.i-love-russia.online",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "lv.i-love-russia.online",
+          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+          "shortId": "1b4e086bf0a1b1f4",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-10",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "fi.i-love-russia.online",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "fi.i-love-russia.online",
+          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+          "shortId": "1b4e086bf0a1b1f4",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-11",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "friendlynode.site",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/stream/751394/socket",
+          "host": "friendlynode.site",
+          "headers": {}
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "friendlynode.site",
+          "enableSessionResumption": false,
+          "fingerprint": "firefox",
+          "alpn": ["http/1.1"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-12",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "friendlynode.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/stream/174196d0/socket",
+          "host": "friendlynode.ru",
+          "headers": {}
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "friendlynode.ru",
+          "enableSessionResumption": false,
+          "fingerprint": "firefox",
+          "alpn": ["http/1.1"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-13",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "friendlynode.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "auto",
+          "host": "friendlynode.ru",
+          "path": "/api/v2/2aff7e3e"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "friendlynode.ru",
+          "enableSessionResumption": false,
+          "fingerprint": "firefox",
+          "alpn": ["h2", "http/1.1"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-14",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/img/media/preview",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
             "headers": {
-              "Host": "vpn.inkeroshop.site"
+              "X-Playback-Token": "c56d6e7108218ecfc8e3757cc11ad5bfb177e6b2e7dd4892dcd0d6f2dd099168"
             }
-          },
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "vpn.inkeroshop.site",
-            "fingerprint": "chrome",
-            "alpn": ["http/1.1"]
           }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
         }
       },
+      "mux": {
+        "enabled": false
+      }
+    },
+    {
+      "tag": "proxy-15",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/api/v1/stream",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
+            "headers": {
+              "X-Playback-Token": "87f58b960b9129001c70719c58f0d9b35191a6a1149b741a8c495b25b7860e25"
+            }
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-16",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/api/v2/live",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
+            "headers": {
+              "X-Playback-Token": "0bb8261b772748f778cd42acda8f8f0555385c53bb465e0050327e2c70bc5fb7"
+            }
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-17",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/content/a",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
+            "headers": {
+              "X-Playback-Token": "db21270b560345bbe3cab2e312ee33259116f3b47259cfd088ce8d161b9a304c"
+            }
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-18",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/api/v4/media/session/poll",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
+            "headers": {
+              "X-Playback-Token": "c7e03408f116ee62b5fc220911771e307aef2f672a816be5374b7e6c1e9d7be8"
+            }
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-19",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/aka/lua/js.ico",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
+            "headers": {
+              "X-Playback-Token": "b7b72fec05d836ad6e0543ae31c48762cd4e3a2a1ebcbe6f1f1f9b4cf9b228ed"
+            }
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-20",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/media/seg/a",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 300000,
+              "cMaxReuseTimes": 100,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingKey": "_dc",
+            "xPaddingBytes": "100-1000",
+            "xPaddingMethod": "tokenish",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxConcurrentPosts": 1,
+            "scMaxEachPostBytes": 524288,
+            "scMinPostsIntervalMs": 150,
+            "headers": {
+              "X-Playback-Token": "eddd6acadfd9b38e816f28cb7a27c7a5c66476fa38c2d5d5ce33fa7d22554b32"
+            }
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-21",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/api/v1/live",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 0,
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "48-96",
+              "maxConnections": 0,
+              "hMaxRequestTimes": "600-1000",
+              "hMaxReusableSecs": "1800-3600"
+            },
+            "seqKey": "segment",
+            "sessionKey": "sess_id",
+            "xPaddingKey": "_t",
+            "seqPlacement": "query",
+            "sessionIDKey": "sess_id",
+            "uplinkDataKey": "X-Playback-Token",
+            "xPaddingBytes": "1-32",
+            "xPaddingHeader": "X-Media-Token",
+            "xPaddingMethod": "tokenish",
+            "sessionIDLength": "5-8",
+            "uplinkChunkSize": 0,
+            "sessionPlacement": "query",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "header",
+            "scMaxEachPostBytes": 1000000,
+            "sessionIDPlacement": "query",
+            "uplinkDataPlacement": "body",
+            "serverMaxHeaderBytes": 50000
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-22",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/chunk/v2",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 0,
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "48-96",
+              "maxConnections": 0,
+              "hMaxRequestTimes": "600-1000",
+              "hMaxReusableSecs": "1800-3600"
+            },
+            "seqKey": "segment",
+            "sessionKey": "sess_id",
+            "xPaddingKey": "_t",
+            "seqPlacement": "query",
+            "sessionIDKey": "sess_id",
+            "uplinkDataKey": "X-Playback-Token",
+            "xPaddingBytes": "1-32",
+            "xPaddingHeader": "X-Media-Token",
+            "xPaddingMethod": "tokenish",
+            "sessionIDLength": "5-8",
+            "uplinkChunkSize": 0,
+            "sessionPlacement": "query",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "header",
+            "scMaxEachPostBytes": 1000000,
+            "sessionIDPlacement": "query",
+            "uplinkDataPlacement": "body",
+            "serverMaxHeaderBytes": 50000
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-23",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/content/b",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 0,
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "48-96",
+              "maxConnections": 0,
+              "hMaxRequestTimes": "600-1000",
+              "hMaxReusableSecs": "1800-3600"
+            },
+            "seqKey": "segment",
+            "sessionKey": "sess_id",
+            "xPaddingKey": "_t",
+            "seqPlacement": "query",
+            "sessionIDKey": "sess_id",
+            "uplinkDataKey": "X-Playback-Token",
+            "xPaddingBytes": "1-32",
+            "xPaddingHeader": "X-Media-Token",
+            "xPaddingMethod": "tokenish",
+            "sessionIDLength": "5-8",
+            "uplinkChunkSize": 0,
+            "sessionPlacement": "query",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "header",
+            "scMaxEachPostBytes": 1000000,
+            "sessionIDPlacement": "query",
+            "uplinkDataPlacement": "body",
+            "serverMaxHeaderBytes": 50000
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-24",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "st2.cdninkerov.ru",
+            "port": 443,
+            "users": [
+              {
+                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "st2.cdninkerov.ru",
+          "path": "/api/v5/segment",
+          "extra": {
+            "xmux": {
+              "cMaxLifetimeMs": 0,
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "48-96",
+              "maxConnections": 0,
+              "hMaxRequestTimes": "600-1000",
+              "hMaxReusableSecs": "1800-3600"
+            },
+            "seqKey": "segment",
+            "sessionKey": "sess_id",
+            "xPaddingKey": "_t",
+            "seqPlacement": "query",
+            "sessionIDKey": "sess_id",
+            "uplinkDataKey": "X-Playback-Token",
+            "xPaddingBytes": "1-32",
+            "xPaddingHeader": "X-Media-Token",
+            "xPaddingMethod": "tokenish",
+            "sessionIDLength": "5-8",
+            "uplinkChunkSize": 0,
+            "sessionPlacement": "query",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "header",
+            "scMaxEachPostBytes": 1000000,
+            "sessionIDPlacement": "query",
+            "uplinkDataPlacement": "body",
+            "serverMaxHeaderBytes": 50000
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "st2.cdninkerov.ru",
+          "fingerprint": "chrome",
+          "alpn": ["h2"]
+        }
+      }
+    },
+    {
+      "tag": "proxy-25",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "fitindoor.net",
+            "port": 8443,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "fitindoor.net",
+          "fingerprint": "firefox",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "xhttpSettings": {
+          "host": "fitindoor.net",
+          "mode": "auto",
+          "path": "/api/v1/upload",
+          "extra": {
+            "scMaxEachPostBytes": 1000000,
+            "scMinPostsIntervalMs": 30,
+            "xmux": {
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingBytes": "100-1000"
+          }
+        }
+      }
+    },
+    {
+      "tag": "proxy-26",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "dismissaltree.net",
+            "port": 2053,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "dismissaltree.net",
+          "fingerprint": "firefox",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "xhttpSettings": {
+          "host": "dismissaltree.net",
+          "mode": "auto",
+          "path": "/api/v1/upload",
+          "extra": {
+            "scMaxEachPostBytes": 1000000,
+            "scMinPostsIntervalMs": 30,
+            "xmux": {
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingBytes": "100-1000"
+          }
+        }
+      }
+    },
+    {
+      "tag": "proxy-27",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "summerculture.net",
+            "port": 8443,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "summerculture.net",
+          "fingerprint": "firefox",
+          "alpn": ["h2", "http/1.1"]
+        },
+        "xhttpSettings": {
+          "host": "summerculture.net",
+          "mode": "auto",
+          "path": "/api/v1/upload",
+          "extra": {
+            "scMaxEachPostBytes": 1000000,
+            "scMinPostsIntervalMs": 30,
+            "xmux": {
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingBytes": "100-1000"
+          }
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "burstObservatory": {
+    "pingConfig": {
+      "connectivity": "",
+      "destination": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "sampling": 2,
+      "timeout": "10s"
+    },
+    "subjectSelector": [
+      "proxy-1", "proxy-2", "proxy-3", "proxy-4", "proxy-5", "proxy-6",
+      "proxy-7", "proxy-8", "proxy-9", "proxy-10", "proxy-11", "proxy-12",
+      "proxy-13", "proxy-14", "proxy-15", "proxy-16", "proxy-17", "proxy-18",
+      "proxy-19", "proxy-20", "proxy-21", "proxy-22", "proxy-23", "proxy-24",
+      "proxy-25", "proxy-26", "proxy-27"
+    ]
+  },
+  "routing": {
+    "domainMatcher": "hybrid",
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
       {
-        "tag": "direct",
-        "protocol": "freedom"
+        "outboundTag": "block",
+        "protocol": ["bittorrent"],
+        "type": "field"
       },
       {
-        "tag": "block",
-        "protocol": "blackhole"
+        "balancerTag": "balancer",
+        "network": "tcp,udp",
+        "type": "field"
       }
     ],
-    "burstObservatory": {
-      "pingConfig": {
-        "connectivity": "",
-        "destination": "http://www.gstatic.com/generate_204",
-        "interval": "10m",
-        "sampling": 2,
-        "timeout": "10s"
-      },
-      "subjectSelector": [
-        "proxy-1",
-        "proxy-2",
-        "proxy-3",
-        "proxy-4",
-        "proxy-5",
-        "proxy-6"
-      ]
-    },
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "block",
-          "protocol": ["bittorrent"],
-          "type": "field"
-        },
-        {
-          "balancerTag": "balancer",
-          "network": "tcp,udp",
-          "type": "field"
+    "balancers": [
+      {
+        "tag": "balancer",
+        "selector": [
+          "proxy-1", "proxy-2", "proxy-3", "proxy-4", "proxy-5", "proxy-6",
+          "proxy-7", "proxy-8", "proxy-9", "proxy-10", "proxy-11", "proxy-12",
+          "proxy-13", "proxy-14", "proxy-15", "proxy-16", "proxy-17", "proxy-18",
+          "proxy-19", "proxy-20", "proxy-21", "proxy-22", "proxy-23", "proxy-24",
+          "proxy-25", "proxy-26", "proxy-27"
+        ],
+        "fallbackTag": "direct",
+        "strategy": {
+          "type": "leastPing"
         }
-      ],
-      "balancers": [
-        {
-          "tag": "balancer",
-          "selector": [
-            "proxy-1",
-            "proxy-2",
-            "proxy-3",
-            "proxy-4",
-            "proxy-5",
-            "proxy-6"
-          ],
-          "fallbackTag": "direct",
-          "strategy": {
-            "type": "leastPing"
-          }
-        }
-      ]
-    }
+      }
+    ]
   },
   {
     "dns": {
