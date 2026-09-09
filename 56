@@ -408,280 +408,276 @@
     }
   },
   {
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ],
-    "queryStrategy": "UseIP"
-  },
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "domain:2ip.ru",
-          "domain:2ip.io",
-          "domain:whoer.net",
-          "domain:yoomoney.ru",
-          "domain:browserleaks.com"
-        ],
-        "outboundTag": "proxy"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "geosite:category-ru",
-          "domain:ru",
-          "domain:su"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "ip": [
-          "10.0.0.0/8",
-          "100.64.0.0/10",
-          "127.0.0.0/8",
-          "169.254.0.0/16",
-          "172.16.0.0/12",
-          "192.168.0.0/16",
-          "::1/128",
-          "fc00::/7",
-          "fe80::/10"
-        ],
-        "type": "field",
-        "outboundTag": "direct"
-      }
-    ],
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch"
-  },
-  "inbounds": [
-    {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": {
-        "udp": true,
-        "auth": "noauth"
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ],
+      "queryStrategy": "UseIP"
     },
-    {
-      "tag": "http",
-      "port": 10809,
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "protocol": ["bittorrent"],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "domain:2ip.ru",
+            "domain:2ip.io",
+            "domain:whoer.net",
+            "domain:yoomoney.ru",
+            "domain:browserleaks.com"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "geosite:category-ru",
+            "domain:ru",
+            "domain:su"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "10.0.0.0/8",
+            "100.64.0.0/10",
+            "127.0.0.0/8",
+            "169.254.0.0/16",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "type": "field",
+          "outboundTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {
+          "udp": true,
+          "auth": "noauth"
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": false,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
       },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "by.i-love-russia.online",
-            "port": 443,
-            "users": [
-              {
-                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "tcpSettings": {},
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "by.i-love-russia.online",
-          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
-          "shortId": "1b4e086bf0a1b1f4",
-          "spiderX": "/",
-          "fingerprint": "qq"
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": false,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
         }
       }
-    },
-    {
-      "tag": "direct",
-      "protocol": "freedom"
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole"
-    }
-  ],
-  "remarks": "🇫🇮 Финляндия"
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "by.i-love-russia.online",
+              "port": 443,
+              "users": [
+                {
+                  "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "tcpSettings": {},
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "by.i-love-russia.online",
+            "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+            "shortId": "1b4e086bf0a1b1f4",
+            "spiderX": "/",
+            "fingerprint": "qq"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      }
+    ],
+    "remarks": "🇫🇮 Финляндия"
   },
   {
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "1.0.0.1"
-    ],
-    "queryStrategy": "UseIP"
-  },
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "domain:2ip.ru",
-          "domain:2ip.io",
-          "domain:whoer.net",
-          "domain:yoomoney.ru",
-          "domain:browserleaks.com"
-        ],
-        "outboundTag": "proxy"
-      },
-      {
-        "type": "field",
-        "domain": [
-          "geosite:category-ru",
-          "domain:ru",
-          "domain:su"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "ip": [
-          "10.0.0.0/8",
-          "100.64.0.0/10",
-          "127.0.0.0/8",
-          "169.254.0.0/16",
-          "172.16.0.0/12",
-          "192.168.0.0/16",
-          "::1/128",
-          "fc00::/7",
-          "fe80::/10"
-        ],
-        "type": "field",
-        "outboundTag": "direct"
-      }
-    ],
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch"
-  },
-  "inbounds": [
-    {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": {
-        "udp": true,
-        "auth": "noauth"
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ],
+      "queryStrategy": "UseIP"
     },
-    {
-      "tag": "http",
-      "port": 10809,
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "protocol": ["bittorrent"],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "domain:2ip.ru",
+            "domain:2ip.io",
+            "domain:whoer.net",
+            "domain:yoomoney.ru",
+            "domain:browserleaks.com"
+          ],
+          "outboundTag": "proxy"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "geosite:category-ru",
+            "domain:ru",
+            "domain:su"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "10.0.0.0/8",
+            "100.64.0.0/10",
+            "127.0.0.0/8",
+            "169.254.0.0/16",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "type": "field",
+          "outboundTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {
+          "udp": true,
+          "auth": "noauth"
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": false,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
       },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": false,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "de2.i-love-russia.online",
-            "port": 443,
-            "users": [
-              {
-                "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "tcpSettings": {},
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "de2.i-love-russia.online",
-          "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
-          "shortId": "1b4e086bf0a1b1f4",
-          "spiderX": "/",
-          "fingerprint": "firefox"
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": false,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
         }
       }
-    },
-    {
-      "tag": "direct",
-      "protocol": "freedom"
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole"
-    }
-  ],
-  "remarks": "🇩🇪 Германия"
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "de2.i-love-russia.online",
+              "port": 443,
+              "users": [
+                {
+                  "id": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "tcpSettings": {},
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "de2.i-love-russia.online",
+            "publicKey": "ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY",
+            "shortId": "1b4e086bf0a1b1f4",
+            "spiderX": "/",
+            "fingerprint": "firefox"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      }
+    ],
+    "remarks": "🇩🇪 Германия"
   },
   {
     "dns": {
@@ -1037,289 +1033,290 @@
     "remarks": "🇩🇪 Белый интернет🏳️"
   },
   {
-  "dns": {
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "8.8.8.8",
-      "1.1.1.1"
-    ],
-    "tag": "dns-in"
-  },
-  "log": {
-    "dnsLog": false,
-    "loglevel": "warning",
-    "access": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/access/access_log.txt",
-    "error": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/error/1788940858711_error_log.txt"
-  },
-  "remarks": "🇪🇺Белый интернет🏳️",
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "password",
-        "udp": true,
-        "accounts": [
-          {
-            "user": "happ-socks",
-            "pass": "UOcgoNkfHXqv"
-          }
-        ]
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
+    "dns": {
+      "queryStrategy": "UseIPv4",
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "tag": "dns-in"
     },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "allowTransparent": false,
-        "auth": "password",
-        "accounts": [
-          {
-            "user": "happ-http",
-            "pass": "OpwtvW8c89zQ"
-          }
-        ]
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "http"
-    }
-  ],
-  "burstObservatory": {
-    "subjectSelector": [
-      "proxy",
-      "proxy-2",
-      "proxy-3"
-    ],
-    "pingConfig": {
-      "destination": "https://connectivitycheck.gstatic.com/generate_204",
-      "connectivity": "https://connectivitycheck.gstatic.com/generate_204",
-      "httpMethod": "HEAD",
-      "interval": "60s",
-      "sampling": 3,
-      "timeout": "5s"
-    }
-  },
-  "outbounds": [
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "fitindoor.net",
-            "port": 8443,
-            "users": [
-              {
-                "encryption": "none",
-                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "fitindoor.net",
-          "fingerprint": "firefox",
-          "alpn": [
-            "h2",
-            "http/1.1"
+    "log": {
+      "dnsLog": false,
+      "loglevel": "warning",
+      "access": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/access/access_log.txt",
+      "error": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/error/1788940858711_error_log.txt"
+    },
+    "remarks": "🇪🇺Белый интернет🏳️",
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "password",
+          "udp": true,
+          "accounts": [
+            {
+              "user": "happ-socks",
+              "pass": "UOcgoNkfHXqv"
+            }
           ]
         },
-        "xhttpSettings": {
-          "host": "fitindoor.net",
-          "mode": "auto",
-          "path": "/api/v1/upload",
-          "extra": {
-            "scMaxEachPostBytes": 1000000,
-            "scMinPostsIntervalMs": 30,
-            "xmux": {
-              "cMaxReuseTimes": "64-128",
-              "maxConcurrency": "16-32",
-              "maxConnections": 0
-            },
-            "xPaddingBytes": "100-1000"
-          }
-        }
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
       },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "dismissaltree.net",
-            "port": 2053,
-            "users": [
-              {
-                "encryption": "none",
-                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "dismissaltree.net",
-          "fingerprint": "firefox",
-          "alpn": [
-            "h2",
-            "http/1.1"
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false,
+          "auth": "password",
+          "accounts": [
+            {
+              "user": "happ-http",
+              "pass": "OpwtvW8c89zQ"
+            }
           ]
         },
-        "xhttpSettings": {
-          "host": "dismissaltree.net",
-          "mode": "auto",
-          "path": "/api/v1/upload",
-          "extra": {
-            "scMaxEachPostBytes": 1000000,
-            "scMinPostsIntervalMs": 30,
-            "xmux": {
-              "cMaxReuseTimes": "64-128",
-              "maxConcurrency": "16-32",
-              "maxConnections": 0
-            },
-            "xPaddingBytes": "100-1000"
-          }
-        }
-      },
-      "tag": "proxy-2"
-    },
-    {
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "summerculture.net",
-            "port": 8443,
-            "users": [
-              {
-                "encryption": "none",
-                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "summerculture.net",
-          "fingerprint": "firefox",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
         },
-        "xhttpSettings": {
-          "host": "summerculture.net",
-          "mode": "auto",
-          "path": "/api/v1/upload",
-          "extra": {
-            "scMaxEachPostBytes": 1000000,
-            "scMinPostsIntervalMs": 30,
-            "xmux": {
-              "cMaxReuseTimes": "64-128",
-              "maxConcurrency": "16-32",
-              "maxConnections": 0
-            },
-            "xPaddingBytes": "100-1000"
-          }
-        }
-      },
-      "tag": "proxy-3"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    },
-    {
-      "protocol": "dns",
-      "tag": "dns-out"
-    }
-  ],
-  "routing": {
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "type": "field",
-        "domain": [
-          "domain:rfn-solution.life"
-        ],
-        "outboundTag": "direct"
-      },
-      {
-        "type": "field",
-        "inboundTag": [
-          "dns-in"
-        ],
-        "balancerTag": "proxy-balancer"
-      },
-      {
-        "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "block"
-      },
-      {
-        "type": "field",
-        "port": 53,
-        "outboundTag": "dns-out"
-      },
-      {
-        "type": "field",
-        "network": "tcp,udp",
-        "balancerTag": "proxy-balancer"
+        "tag": "http"
       }
     ],
-    "balancers": [
-      {
-        "tag": "proxy-balancer",
-        "selector": [
-          "proxy"
-        ],
-        "fallbackTag": "proxy",
-        "strategy": {
-          "type": "leastLoad"
-        }
+    "burstObservatory": {
+      "subjectSelector": [
+        "proxy",
+        "proxy-2",
+        "proxy-3"
+      ],
+      "pingConfig": {
+        "destination": "https://connectivitycheck.gstatic.com/generate_204",
+        "connectivity": "https://connectivitycheck.gstatic.com/generate_204",
+        "httpMethod": "HEAD",
+        "interval": "60s",
+        "sampling": 3,
+        "timeout": "5s"
       }
-    ]
+    },
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "fitindoor.net",
+              "port": 8443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "fitindoor.net",
+            "fingerprint": "firefox",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          },
+          "xhttpSettings": {
+            "host": "fitindoor.net",
+            "mode": "auto",
+            "path": "/api/v1/upload",
+            "extra": {
+              "scMaxEachPostBytes": 1000000,
+              "scMinPostsIntervalMs": 30,
+              "xmux": {
+                "cMaxReuseTimes": "64-128",
+                "maxConcurrency": "16-32",
+                "maxConnections": 0
+              },
+              "xPaddingBytes": "100-1000"
+            }
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "dismissaltree.net",
+              "port": 2053,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "dismissaltree.net",
+            "fingerprint": "firefox",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          },
+          "xhttpSettings": {
+            "host": "dismissaltree.net",
+            "mode": "auto",
+            "path": "/api/v1/upload",
+            "extra": {
+              "scMaxEachPostBytes": 1000000,
+              "scMinPostsIntervalMs": 30,
+              "xmux": {
+                "cMaxReuseTimes": "64-128",
+                "maxConcurrency": "16-32",
+                "maxConnections": 0
+              },
+              "xPaddingBytes": "100-1000"
+            }
+          }
+        },
+        "tag": "proxy-2"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "summerculture.net",
+              "port": 8443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "security": "tls",
+          "tlsSettings": {
+            "serverName": "summerculture.net",
+            "fingerprint": "firefox",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          },
+          "xhttpSettings": {
+            "host": "summerculture.net",
+            "mode": "auto",
+            "path": "/api/v1/upload",
+            "extra": {
+              "scMaxEachPostBytes": 1000000,
+              "scMinPostsIntervalMs": 30,
+              "xmux": {
+                "cMaxReuseTimes": "64-128",
+                "maxConcurrency": "16-32",
+                "maxConnections": 0
+              },
+              "xPaddingBytes": "100-1000"
+            }
+          }
+        },
+        "tag": "proxy-3"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      },
+      {
+        "protocol": "dns",
+        "tag": "dns-out"
+      }
+    ],
+    "routing": {
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "domain": [
+            "domain:rfn-solution.life"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-in"
+          ],
+          "balancerTag": "proxy-balancer"
+        },
+        {
+          "type": "field",
+          "protocol": [
+            "bittorrent"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "type": "field",
+          "port": 53,
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "balancerTag": "proxy-balancer"
+        }
+      ],
+      "balancers": [
+        {
+          "tag": "proxy-balancer",
+          "selector": [
+            "proxy"
+          ],
+          "fallbackTag": "proxy",
+          "strategy": {
+            "type": "leastLoad"
+          }
+        }
+      ]
+    }
   }
 ]
