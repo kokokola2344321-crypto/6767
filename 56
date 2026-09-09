@@ -359,7 +359,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇪🇪 Эстония | Hysteria | Игровой 🔥",
+    "remarks": "🇪🇪 Эстония",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
@@ -543,7 +543,7 @@
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇫🇮 Финляндия (Ai, play market)"
+  "remarks": "🇫🇮 Финляндия"
   },
   {
   "dns": {
@@ -681,7 +681,7 @@
       "protocol": "blackhole"
     }
   ],
-  "remarks": "🇩🇪 Германия 1"
+  "remarks": "🇩🇪 Германия"
   },
   {
     "dns": {
@@ -1034,7 +1034,7 @@
         "protocol": "blackhole"
       }
     ],
-    "remarks": "🇩🇪 Белые списки 1"
+    "remarks": "🇩🇪 Белый интернет🏳️"
   },
   {
     "dns": {
@@ -1135,7 +1135,7 @@
         "protocol": "blackhole"
       }
     ],
-    "remarks": "  🇳🇱Белые списки 2 🛡 ",
+    "remarks": "  🇳🇱Белый интернет 🏳️",
     "meta": {
       "serverDescription": "Для мобильного интернета"
     }
