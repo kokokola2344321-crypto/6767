@@ -1036,7 +1036,290 @@
     ],
     "remarks": "🇩🇪 Белый интернет🏳️"
   },
-  
+  {
+  "dns": {
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "8.8.8.8",
+      "1.1.1.1"
+    ],
+    "tag": "dns-in"
+  },
+  "log": {
+    "dnsLog": false,
+    "loglevel": "warning",
+    "access": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/access/access_log.txt",
+    "error": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/error/1788940858711_error_log.txt"
+  },
+  "remarks": "🇪🇺Белый интернет🏳️",
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "password",
+        "udp": true,
+        "accounts": [
+          {
+            "user": "happ-socks",
+            "pass": "UOcgoNkfHXqv"
+          }
+        ]
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true,
+        "routeOnly": false
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false,
+        "auth": "password",
+        "accounts": [
+          {
+            "user": "happ-http",
+            "pass": "OpwtvW8c89zQ"
+          }
+        ]
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true,
+        "routeOnly": false
+      },
+      "tag": "http"
     }
+  ],
+  "burstObservatory": {
+    "subjectSelector": [
+      "proxy",
+      "proxy-2",
+      "proxy-3"
+    ],
+    "pingConfig": {
+      "destination": "https://connectivitycheck.gstatic.com/generate_204",
+      "connectivity": "https://connectivitycheck.gstatic.com/generate_204",
+      "httpMethod": "HEAD",
+      "interval": "60s",
+      "sampling": 3,
+      "timeout": "5s"
+    }
+  },
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "fitindoor.net",
+            "port": 8443,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "fitindoor.net",
+          "fingerprint": "firefox",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        },
+        "xhttpSettings": {
+          "host": "fitindoor.net",
+          "mode": "auto",
+          "path": "/api/v1/upload",
+          "extra": {
+            "scMaxEachPostBytes": 1000000,
+            "scMinPostsIntervalMs": 30,
+            "xmux": {
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingBytes": "100-1000"
+          }
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "dismissaltree.net",
+            "port": 2053,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "dismissaltree.net",
+          "fingerprint": "firefox",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        },
+        "xhttpSettings": {
+          "host": "dismissaltree.net",
+          "mode": "auto",
+          "path": "/api/v1/upload",
+          "extra": {
+            "scMaxEachPostBytes": 1000000,
+            "scMinPostsIntervalMs": 30,
+            "xmux": {
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingBytes": "100-1000"
+          }
+        }
+      },
+      "tag": "proxy-2"
+    },
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "summerculture.net",
+            "port": 8443,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "4c04fe99-1ecd-4890-b556-ab38295b74ad"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "summerculture.net",
+          "fingerprint": "firefox",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        },
+        "xhttpSettings": {
+          "host": "summerculture.net",
+          "mode": "auto",
+          "path": "/api/v1/upload",
+          "extra": {
+            "scMaxEachPostBytes": 1000000,
+            "scMinPostsIntervalMs": 30,
+            "xmux": {
+              "cMaxReuseTimes": "64-128",
+              "maxConcurrency": "16-32",
+              "maxConnections": 0
+            },
+            "xPaddingBytes": "100-1000"
+          }
+        }
+      },
+      "tag": "proxy-3"
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    },
+    {
+      "protocol": "dns",
+      "tag": "dns-out"
+    }
+  ],
+  "routing": {
+    "domainMatcher": "hybrid",
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "domain:rfn-solution.life"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "dns-in"
+        ],
+        "balancerTag": "proxy-balancer"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "port": 53,
+        "outboundTag": "dns-out"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "balancerTag": "proxy-balancer"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "proxy-balancer",
+        "selector": [
+          "proxy"
+        ],
+        "fallbackTag": "proxy",
+        "strategy": {
+          "type": "leastLoad"
+        }
+      }
+    ]
   }
 ]
