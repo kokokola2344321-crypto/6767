@@ -1817,6 +1817,154 @@
     "remarks": "🇯🇵 Япония"
   },
   {
+  "api": {
+    "listen": "[::1]:10085",
+    "services": [
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIP",
+    "servers": [
+      "1.1.1.1",
+      {
+        "address": "1.1.1.1",
+        "domains": [],
+        "port": 53
+      },
+      {
+        "address": "8.8.8.8",
+        "domains": [],
+        "port": 53
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "accounts": [
+          {
+            "pass": "Lbsjc63n16pw",
+            "user": "happ-socks"
+          }
+        ],
+        "auth": "password",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    }
+  ],
+  "log": {
+    "access": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/access/access_log.txt",
+    "dnsLog": true,
+    "error": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/error/1789211542120_error_log.txt",
+    "loglevel": "debug"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "hysteria",
+      "settings": {
+        "address": "cinder.femboy.click",
+        "port": 443,
+        "version": 2
+      },
+      "streamSettings": {
+        "finalmask": {},
+        "hysteriaSettings": {
+          "auth": "45aca56b-1494-4a8d-b8b6-7e8cacc17988",
+          "version": 2
+        },
+        "network": "hysteria",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": [
+            "h3"
+          ],
+          "serverName": "cinder.femboy.click",
+          "show": false
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "remarks": "🇧🇾 Беларусь | Игровой 🔥",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "stats": {}
+  },
+  {
     "remarks": "Белый Интернет🏳️🇫🇲 ",
     "dns": {
       "servers": [
