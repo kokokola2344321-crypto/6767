@@ -1931,7 +1931,7 @@
       "statsOutboundDownlink": true
     }
   },
-  "remarks": "🇧🇾 Беларусь | Игровой 🔥",
+  "remarks": "🇧🇾 Беларусь",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
