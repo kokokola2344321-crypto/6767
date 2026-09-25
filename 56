@@ -2,7 +2,7 @@
 #announce: 🔰 Нажми на спидометр или молнию, чтобы проверить соединение. Меньше ms - лучше | n/a - не работает. Если ВПН плохо работает, то нажмите на 🔄️.
 #profile-update-interval: 1
 
-hysteria2://39ba639b-8f15-4bd3-9811-4b87135f649c@31.76.22.242:443?security=tls&fm=%7B%22quicParams%22%3A%7B%22brutalDown%22%3A%222000%20mbps%22%2C%22brutalUp%22%3A%222000%20mbps%22%2C%22congestion%22%3A%22brutal%22%2C%22keepAlivePeriod%22%3A10%2C%22maxIdleTimeout%22%3A20%7D%7D&sni=mol.ultimagamest.com#🇵🇱Польша быстрая ⭐
+
 vless://45aca56b-1494-4a8d-b8b6-7e8cacc17988@lacuna.femboy.click:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=lacuna.femboy.click&fp=firefox&pbk=LEQw3pY4J0vxf6RhCC8OKwDVCdtUxVzhQPrMJy757gs&sid=47207eb259e33daf&type=tcp&headerType=none#%F0%9F%87%AF%F0%9F%87%B5%20%D0%AF%D0%BF%D0%BE%D0%BD%D0%B8%D1%8F
 vless://45aca56b-1494-4a8d-b8b6-7e8cacc17988@ember.femboy.click:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=ember.femboy.click&fp=firefox&pbk=clRMH4Zw--WwMQ6e4gBl0EoRDdKtYurqWc6Q6b81m3U&sid=ed48697573893042&type=tcp&headerType=none#%F0%9F%87%B8%F0%9F%87%AA%20%D0%A8%D0%B2%D0%B5%D1%86%D0%B8%D1%8F
 
