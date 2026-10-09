@@ -9,8 +9,7 @@
           "address": "77.88.8.8",
           "domains": [
             "domain:ad.mail.ru",
-            "domain:addthis.com",
-            "..."
+            "domain:addthis.com"
           ],
           "skipFallback": true
         },
@@ -132,8 +131,7 @@
         {
           "domain": [
             "domain:ad.mail.ru",
-            "domain:addthis.com",
-            "..."
+            "domain:addthis.com"
           ],
           "outboundTag": "block",
           "type": "field"
@@ -162,8 +160,7 @@
         },
         {
           "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
+            "regexp:\\.(ru|su|moscow|tatar)$"
           ],
           "outboundTag": "direct",
           "type": "field"
@@ -185,8 +182,7 @@
         {
           "address": "77.88.8.8",
           "domains": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "skipFallback": true
         },
@@ -311,8 +307,7 @@
         },
         {
           "domain": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "outboundTag": "block",
           "type": "field"
@@ -341,8 +336,7 @@
         },
         {
           "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
+            "regexp:\\.(ru|su|moscow|tatar)$"
           ],
           "outboundTag": "direct",
           "type": "field"
@@ -364,8 +358,7 @@
         {
           "address": "77.88.8.8",
           "domains": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "skipFallback": true
         },
@@ -479,8 +472,7 @@
         },
         {
           "domain": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "outboundTag": "block",
           "type": "field"
@@ -509,8 +501,7 @@
         },
         {
           "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
+            "regexp:\\.(ru|su|moscow|tatar)$"
           ],
           "outboundTag": "direct",
           "type": "field"
@@ -532,8 +523,7 @@
         {
           "address": "77.88.8.8",
           "domains": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "skipFallback": true
         },
@@ -658,8 +648,7 @@
         },
         {
           "domain": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "outboundTag": "block",
           "type": "field"
@@ -688,8 +677,7 @@
         },
         {
           "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
+            "regexp:\\.(ru|su|moscow|tatar)$"
           ],
           "outboundTag": "direct",
           "type": "field"
@@ -711,8 +699,7 @@
         {
           "address": "77.88.8.8",
           "domains": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "skipFallback": true
         },
@@ -833,8 +820,7 @@
         },
         {
           "domain": [
-            "domain:ad.mail.ru",
-            "..."
+            "domain:ad.mail.ru"
           ],
           "outboundTag": "block",
           "type": "field"
@@ -863,8 +849,7 @@
         },
         {
           "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
+            "regexp:\\.(ru|su|moscow|tatar)$"
           ],
           "outboundTag": "direct",
           "type": "field"
@@ -879,711 +864,711 @@
   },
   {
     "burstObservatory": {
-        "pingConfig": {
-            "connectivity": "",
-            "destination": "https://max.ru/",
-            "interval": "15s",
-            "sampling": 2,
-            "timeout": "3s"
-        },
-        "subjectSelector": [
-            "WIFI_"
-        ]
+      "pingConfig": {
+        "connectivity": "",
+        "destination": "https://max.ru/",
+        "interval": "15s",
+        "sampling": 2,
+        "timeout": "3s"
+      },
+      "subjectSelector": [
+        "WIFI_"
+      ]
     },
     "dns": {
-        "queryStrategy": "UseIP",
-        "servers": [
-            "77.88.8.8",
-            "77.88.8.1",
-            "8.8.8.8"
-        ]
+      "queryStrategy": "UseIP",
+      "servers": [
+        "77.88.8.8",
+        "77.88.8.1",
+        "8.8.8.8"
+      ]
     },
     "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": false
-            },
-            "tag": "socks"
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
         },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "allowTransparent": false
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": false
-            },
-            "tag": "http"
-        }
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "allowTransparent": false
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "http"
+      }
     ],
     "meta": null,
     "outbounds": [
-        {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "est2.bolvankamax.com",
-                        "port": 443,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "flow": "",
-                                "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "xhttp",
-                "realitySettings": {
-                    "fingerprint": "qq",
-                    "publicKey": "l5_EHPg0T4EvagTn883oushyUwVU_GGHDsZr7hHEfXg",
-                    "serverName": "www.zalando.de",
-                    "shortId": "a41b4f92d7bf092d"
-                },
-                "security": "reality",
-                "xhttpSettings": {
-                    "host": "",
-                    "mode": "auto",
-                    "path": "/55f318edd8b4"
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "est2.bolvankamax.com",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
                 }
-            },
-            "tag": "WIFI_"
+              ]
+            }
+          ]
         },
-        {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "est2.bolvankamax.com",
-                        "port": 4444,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "flow": "xtls-rprx-vision",
-                                "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "realitySettings": {
-                    "fingerprint": "edge",
-                    "publicKey": "hoOzH-ZQhsiiqRh2mgf91nFNFWt7FT-UH-oQbdM4b3E",
-                    "serverName": "www.zalando.de",
-                    "shortId": "360efa96f0829c23"
-                },
-                "security": "reality",
-                "tcpSettings": {
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "qq",
+            "publicKey": "l5_EHPg0T4EvagTn883oushyUwVU_GGHDsZr7hHEfXg",
+            "serverName": "www.zalando.de",
+            "shortId": "a41b4f92d7bf092d"
+          },
+          "security": "reality",
+          "xhttpSettings": {
+            "host": "",
+            "mode": "auto",
+            "path": "/55f318edd8b4"
+          }
+        },
+        "tag": "WIFI_"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "est2.bolvankamax.com",
+              "port": 4444,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision",
+                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
                 }
-            },
-            "tag": "WIFI_-2"
+              ]
+            }
+          ]
         },
-        {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "178.176.128.128",
-                        "port": 443,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "flow": "",
-                                "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "xhttp",
-                "security": "tls",
-                "tlsSettings": {
-                    "alpn": [
-                        "h2",
-                        "http/1.1"
-                    ],
-                    "enableSessionResumption": false,
-                    "fingerprint": "firefox",
-                    "serverName": "vkcdn.bolvankamax.com"
-                },
-                "xhttpSettings": {
-                    "extra": {
-                        "enableXmux": true,
-                        "mode": "packet-up",
-                        "noGRPCHeader": false,
-                        "noSSEHeader": false,
-                        "scMaxBufferedPosts": 30,
-                        "scMaxEachPostBytes": 1000000,
-                        "scStreamUpServerSecs": "20-80",
-                        "seqKey": "id",
-                        "seqPlacement": "query",
-                        "sessionIDKey": "session",
-                        "sessionIDPlacement": "query",
-                        "uplinkHTTPMethod": "GET",
-                        "xPaddingBytes": "100-1000",
-                        "xPaddingKey": "token",
-                        "xPaddingMethod": "tokenish",
-                        "xPaddingObfsMode": true,
-                        "xPaddingPlacement": "query",
-                        "xmux": {
-                            "cMaxReuseTimes": 100,
-                            "hKeepAlivePeriod": 0,
-                            "hMaxRequestTimes": "600-900",
-                            "hMaxReusableSecs": "1800-3000",
-                            "maxConcurrency": "16-32",
-                            "maxConnections": 0
-                        }
-                    },
-                    "host": "vkcdn.bolvankamax.com",
-                    "mode": "packet-up",
-                    "path": "/static/getFile/video/segment.ts"
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "edge",
+            "publicKey": "hoOzH-ZQhsiiqRh2mgf91nFNFWt7FT-UH-oQbdM4b3E",
+            "serverName": "www.zalando.de",
+            "shortId": "360efa96f0829c23"
+          },
+          "security": "reality",
+          "tcpSettings": {}
+        },
+        "tag": "WIFI_-2"
+      },
+      {
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "178.176.128.128",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
                 }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "xhttp",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "enableSessionResumption": false,
+            "fingerprint": "firefox",
+            "serverName": "vkcdn.bolvankamax.com"
+          },
+          "xhttpSettings": {
+            "extra": {
+              "enableXmux": true,
+              "mode": "packet-up",
+              "noGRPCHeader": false,
+              "noSSEHeader": false,
+              "scMaxBufferedPosts": 30,
+              "scMaxEachPostBytes": 1000000,
+              "scStreamUpServerSecs": "20-80",
+              "seqKey": "id",
+              "seqPlacement": "query",
+              "sessionIDKey": "session",
+              "sessionIDPlacement": "query",
+              "uplinkHTTPMethod": "GET",
+              "xPaddingBytes": "100-1000",
+              "xPaddingKey": "token",
+              "xPaddingMethod": "tokenish",
+              "xPaddingObfsMode": true,
+              "xPaddingPlacement": "query",
+              "xmux": {
+                "cMaxReuseTimes": 100,
+                "hKeepAlivePeriod": 0,
+                "hMaxRequestTimes": "600-900",
+                "hMaxReusableSecs": "1800-3000",
+                "maxConcurrency": "16-32",
+                "maxConnections": 0
+              }
             },
-            "tag": "FALLBACK_"
+            "host": "vkcdn.bolvankamax.com",
+            "mode": "packet-up",
+            "path": "/static/getFile/video/segment.ts"
+          }
         },
-        {
-            "protocol": "freedom",
-            "tag": "direct"
-        },
-        {
-            "protocol": "blackhole",
-            "tag": "block"
-        }
+        "tag": "FALLBACK_"
+      },
+      {
+        "protocol": "freedom",
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "tag": "block"
+      }
     ],
     "remarks": "🇪🇪📋 Эстония - АвтоБС",
     "routing": {
-        "balancers": [
-            {
-                "fallbackTag": "FALLBACK_",
-                "selector": [
-                    "WIFI_"
-                ],
-                "strategy": {
-                    "settings": {
-                        "baselines": [
-                            "1s"
-                        ],
-                        "expected": 2,
-                        "maxRTT": "1s",
-                        "tolerance": 0.01
-                    },
-                    "type": "leastPing"
-                },
-                "tag": "auto_wifi"
-            }
-        ],
-        "domainMatcher": "hybrid",
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-            {
-                "outboundTag": "direct",
-                "protocol": [
-                    "bittorrent"
-                ],
-                "type": "field"
+      "balancers": [
+        {
+          "fallbackTag": "FALLBACK_",
+          "selector": [
+            "WIFI_"
+          ],
+          "strategy": {
+            "settings": {
+              "baselines": [
+                "1s"
+              ],
+              "expected": 2,
+              "maxRTT": "1s",
+              "tolerance": 0.01
             },
-            {
-                "ip": [
-                    "geoip:private"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "geosite:category-gov-ru",
-                    "domain:gosuslugi.ru",
-                    "domain:esia.gosuslugi.ru",
-                    "domain:dom.gosuslugi.ru",
-                    "domain:pos.gosuslugi.ru",
-                    "domain:gu-st.ru",
-                    "domain:gov.ru",
-                    "domain:nalog.ru",
-                    "domain:nalog.gov.ru",
-                    "domain:customs.gov.ru",
-                    "domain:pfr.gov.ru",
-                    "domain:sfr.gov.ru",
-                    "domain:mos.ru",
-                    "domain:spb.ru",
-                    "domain:mvd.ru",
-                    "domain:mvd.gov.ru",
-                    "domain:gibdd.ru",
-                    "domain:fssp.gov.ru",
-                    "domain:cbr.ru",
-                    "domain:dnevnik.ru",
-                    "domain:myschool.edu.ru",
-                    "domain:pervye.ru",
-                    "domain:sferum.ru",
-                    "domain:sferum-dev.ru",
-                    "domain:ege.edu.ru",
-                    "domain:rzd.ru",
-                    "domain:ticket.rzd.ru",
-                    "domain:rzd-bonus.ru",
-                    "domain:pochta.ru",
-                    "domain:rustore.ru",
-                    "domain:ruwiki.ru",
-                    "domain:rosreestr.gov.ru",
-                    "domain:kremlin.ru",
-                    "domain:council.gov.ru",
-                    "domain:duma.gov.ru",
-                    "domain:zakupki.gov.ru",
-                    "domain:sudrf.ru",
-                    "domain:mos-gorsud.ru",
-                    "regexp:^(.+\\.)?gosuslugi\\.ru$",
-                    "regexp:^(.+\\.)?gov\\.ru$",
-                    "regexp:^(.+\\.)?rzd\\.ru$"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "domain:dixy.ru",
-                    "domain:5ka.ru",
-                    "domain:5post.market",
-                    "domain:x5.ru",
-                    "domain:x5club.ru",
-                    "domain:perekrestok.ru",
-                    "domain:vprok.ru",
-                    "domain:chizhik.club",
-                    "domain:magnit.ru",
-                    "domain:magnit.com",
-                    "domain:samokat.ru",
-                    "domain:kuper.ru",
-                    "domain:sbermarket.ru",
-                    "domain:lenta.com",
-                    "domain:lenta.ru",
-                    "domain:auchan.ru",
-                    "domain:metro-cc.ru",
-                    "domain:vkusvill.ru",
-                    "domain:globus.ru",
-                    "domain:okeydostavka.ru",
-                    "domain:av.ru",
-                    "domain:fix-price.com",
-                    "domain:fix-price.ru",
-                    "domain:krasnoeibeloe.ru",
-                    "domain:bristol.ru",
-                    "domain:wildberries.ru",
-                    "domain:wbbasket.ru",
-                    "domain:wb-basket.ru",
-                    "domain:wb.ru",
-                    "domain:geobasket.ru",
-                    "domain:rwb.ru",
-                    "domain:wibes.ru",
-                    "domain:ozon.ru",
-                    "domain:ozon.by",
-                    "domain:ozon.com",
-                    "domain:ozon.com.by",
-                    "domain:ozon.com.kz",
-                    "domain:ozon.kz",
-                    "domain:ozon.tm",
-                    "domain:ozone.ru",
-                    "domain:ozonru.me",
-                    "domain:ozonusercontent.com",
-                    "domain:o3.ru",
-                    "domain:o3t.ru",
-                    "domain:o3team.ru",
-                    "domain:ozon-dostavka.ru",
-                    "domain:ozonpartners.ru",
-                    "domain:avito.ru",
-                    "domain:avito.st",
-                    "domain:megamarket.ru",
-                    "domain:megamarket.tech",
-                    "domain:market.yandex.ru",
-                    "domain:dns-shop.ru",
-                    "domain:mvideo.ru",
-                    "domain:eldorado.ru",
-                    "domain:citilink.ru",
-                    "domain:lemanapro.ru",
-                    "domain:leroymerlin.ru",
-                    "domain:vseinstrumenti.ru",
-                    "domain:petrovich.ru",
-                    "domain:dodopizza.ru",
-                    "domain:burgerkingrus.ru",
-                    "domain:vkusnoitochka.ru",
-                    "domain:rostics.ru",
-                    "domain:kfc.ru",
-                    "domain:eapteka.ru",
-                    "domain:apteka.ru",
-                    "domain:asna.ru",
-                    "domain:zdravcity.ru",
-                    "domain:366.ru",
-                    "regexp:^(.+\\.)?dixy\\.ru$",
-                    "regexp:^(.+\\.)?x5.*\\.ru$",
-                    "regexp:^(.+\\.)?wb\\.ru$",
-                    "regexp:^(.+\\.)?wildberries\\.ru$",
-                    "regexp:^(.+\\.)?ozon(e)?\\.ru$",
-                    "regexp:^(.+\\.)?lemanapro\\.ru$",
-                    "regexp:^[0-9]{2}\\.img\\.avito\\.st$"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "domain:vk.com",
-                    "domain:vk.ru",
-                    "domain:id.vk.com",
-                    "domain:userapi.com",
-                    "domain:vk-cdn.net",
-                    "domain:st.mycdn.me",
-                    "domain:login.vk.com",
-                    "domain:oauth.vk.ru",
-                    "domain:stats.vk-portal.net",
-                    "domain:vkcdnservice.com",
-                    "domain:vk.me",
-                    "domain:vk.cc",
-                    "domain:vkuservideo.net",
-                    "domain:vkuseraudio.net",
-                    "domain:api.vk.com",
-                    "domain:vkapps.com",
-                    "domain:vkforms.ru",
-                    "domain:vk-portal.net",
-                    "domain:m.vk.com",
-                    "domain:st1-19.vk.com",
-                    "domain:st1-18.vk.com",
-                    "domain:queuev4.vk.com",
-                    "domain:vkuser.net",
-                    "domain:vkvideo.ru",
-                    "domain:cdnsix.vk-com.ru",
-                    "domain:ok.ru",
-                    "domain:okcdn.ru",
-                    "domain:mycdn.me",
-                    "domain:742231.ms.ok.ru",
-                    "full:st-ok-pts.cdn-vk.ru",
-                    "full:st-ok.cdn-vk.ru",
-                    "domain:mail.ru",
-                    "domain:my.mail.ru",
-                    "domain:e.mail.ru",
-                    "domain:cloud.mail.ru",
-                    "domain:oneme.ru",
-                    "domain:max.ru",
-                    "domain:boosty.to",
-                    "domain:rutube.ru",
-                    "domain:kinopoisk.ru",
-                    "domain:ivi.ru",
-                    "domain:okko.tv",
-                    "domain:kion.ru",
-                    "domain:premier.one",
-                    "domain:smotrim.ru",
-                    "domain:1tv.ru",
-                    "domain:1internet.tv",
-                    "domain:vgtrk.ru",
-                    "domain:ntv.ru",
-                    "domain:matchtv.ru",
-                    "domain:mts.ru",
-                    "domain:beeline.ru",
-                    "domain:megafon.ru",
-                    "domain:tele2.ru",
-                    "domain:t2.ru",
-                    "domain:yota.ru",
-                    "domain:rt.ru",
-                    "domain:rostelecom.ru",
-                    "domain:dom.ru",
-                    "domain:motivtelecom.ru",
-                    "domain:2gis.ae",
-                    "domain:2gis.am",
-                    "domain:2gis.az",
-                    "domain:2gis.by",
-                    "domain:2gis.com",
-                    "domain:2gis.com.cy",
-                    "domain:2gis.cz",
-                    "domain:2gis.ge",
-                    "domain:2gis.kg",
-                    "domain:2gis.kz",
-                    "domain:2gis.ru",
-                    "domain:2gis.tj",
-                    "domain:2gis.ua",
-                    "domain:2gis.uz",
-                    "domain:ams2-cdn.2gis.com",
-                    "domain:d-assets.2gis.ru",
-                    "domain:disk.2gis.com",
-                    "domain:reviews.2gis.com",
-                    "domain:citydrive.ru",
-                    "domain:taximaxim.ru",
-                    "domain:drive2.ru",
-                    "domain:auto.ru",
-                    "domain:hh.ru",
-                    "domain:superjob.ru",
-                    "domain:habr.com",
-                    "domain:gismeteo.ru",
-                    "domain:rp5.ru",
-                    "domain:rbc.ru",
-                    "domain:ria.ru",
-                    "domain:lenta.ru",
-                    "domain:gazeta.ru",
-                    "domain:kp.ru",
-                    "domain:aif.ru",
-                    "domain:rg.ru",
-                    "domain:tass.ru",
-                    "domain:kommersant.ru",
-                    "domain:rambler.ru",
-                    "domain:rambler-co.ru",
-                    "domain:forbes.ru",
-                    "domain:47news.ru",
-                    "domain:1c.ru",
-                    "domain:1c-bitrix.ru",
-                    "domain:1cfresh.com",
-                    "domain:1cloud.ru",
-                    "domain:bitrix24.ru",
-                    "domain:kontur.ru",
-                    "domain:kontur.host",
-                    "domain:reg.ru",
-                    "domain:nic.ru",
-                    "domain:selectel.ru",
-                    "domain:timeweb.com",
-                    "domain:beget.com",
-                    "domain:dellin.ru",
-                    "domain:cdek.ru",
-                    "domain:tutu.ru",
-                    "domain:flypobeda.ru",
-                    "domain:aeroflot.ru",
-                    "domain:s7.ru",
-                    "domain:uralairlines.ru",
-                    "domain:sirena-travel.ru",
-                    "domain:bronevik.com",
-                    "domain:ostrovok.ru",
-                    "domain:platformaofd.ru",
-                    "domain:sb.scorecardresearch.com",
-                    "domain:stbid.ru",
-                    "domain:adriver.ru",
-                    "domain:flocktory.com",
-                    "domain:uxfeedback.ru",
-                    "domain:serverstats.ru",
-                    "domain:speedstream.ru",
-                    "domain:clstorage.net",
-                    "domain:yadro.ru",
-                    "domain:csat.ru",
-                    "domain:cscampus.ru",
-                    "domain:4meeting.me",
-                    "domain:8ofpsm7zqu.a.trbcdn.net",
-                    "domain:abr.ru",
-                    "domain:aclub.ru",
-                    "domain:alformacap.com",
-                    "domain:alformacapital.com",
-                    "domain:domclick.ru",
-                    "domain:cian.ru",
-                    "domain:tank-online.com",
-                    "domain:tildaapi.com",
-                    "domain:tns-counter.ru",
-                    "domain:xn----7sb7akeedqd.xn--p1ai",
-                    "domain:xn--80aacoonefzg3am8b1fsb.xn--p1ai",
-                    "domain:xn--90ab2c.xn--p1ai",
-                    "domain:xn--90aifd0aza.site",
-                    "domain:xn--b1aew.xn--p1ai",
-                    "regexp:^.*\\.vk\\.com$",
-                    "regexp:^.*\\.mail\\.ru$",
-                    "regexp:^.*\\.ok\\.ru$",
-                    "regexp:^.*\\.odnoklassniki\\.ru$",
-                    "regexp:^.*\\.my\\.mail\\.ru$",
-                    "regexp:^.*\\.e\\.mail\\.ru$",
-                    "regexp:^.*\\.vk-portal\\.net$",
-                    "regexp:^(.+\\.)?rutube\\.ru$",
-                    "regexp:^(.+\\.)?kinopoisk\\.ru$",
-                    "regexp:^(.+\\.)?mts.*\\.ru$",
-                    "regexp:^(.+\\.)?dzen.*\\.ru$",
-                    "regexp:^(.+\\.)?beeline\\.ru$",
-                    "regexp:^(.+\\.)?megafon\\.ru$",
-                    "regexp:^(.+\\.)?t(2|ele2)\\.ru$",
-                    "regexp:^api\\.(a\\.mts|avito|expf|max|mindbox)\\.ru$",
-                    "regexp:^sun[0-9]+(-[0-9]+)?\\.userapi\\.com$"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "domain:yandex.ru",
-                    "domain:ya.ru",
-                    "domain:yandexwebcache.net",
-                    "domain:yandexwebcache.org",
-                    "domain:yastat.net",
-                    "domain:yastatic.net",
-                    "domain:yads.tech",
-                    "domain:yandex",
-                    "domain:yandex-bank.net",
-                    "domain:yandex.aero",
-                    "domain:yandex.az",
-                    "domain:yandex.by",
-                    "domain:yandex.cloud",
-                    "domain:yandex.co.il",
-                    "domain:yandex.com",
-                    "domain:yandex.com.ge",
-                    "domain:yandex.eu",
-                    "domain:yandex.fr",
-                    "domain:yandex.jobs",
-                    "domain:yandex.kg",
-                    "domain:yandex.kz",
-                    "domain:yandex.net",
-                    "domain:yandex.org",
-                    "domain:yandexadexchange.net",
-                    "domain:yandexcloud.net",
-                    "domain:yandexcom.net",
-                    "domain:yandexmetrica.com",
-                    "domain:yandex.st",
-                    "domain:yccdn.ru",
-                    "domain:300.ya.ru",
-                    "domain:avatars.mds.yandex.net",
-                    "domain:d5de4k0ri8jba7ucdbt6.apigw.yandexcloud.net",
-                    "regexp:^.*\\.yandex\\.net$",
-                    "regexp:^[0-9]+\\.mc\\.yandex\\.ru$"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "domain:mtalk.google.com",
-                    "domain:push.apple.com",
-                    "domain:*.push.apple.com",
-                    "domain:identity.apple.com",
-                    "domain:*.appattest.apple.com",
-                    "domain:deviceenrollment.apple.com",
-                    "domain:deviceservices-external.apple.com"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "ip": [
-                    "17.0.0.0/8",
-                    "193.200.10.0/23",
-                    "91.223.63.0/24",
-                    "217.12.96.0/24",
-                    "217.12.97.0/24",
-                    "217.12.98.0/24",
-                    "217.12.99.0/24",
-                    "217.12.100.0/24",
-                    "217.12.101.0/24",
-                    "217.12.102.0/24",
-                    "217.12.103.0/24",
-                    "217.12.104.0/24",
-                    "217.12.105.0/24",
-                    "217.12.106.0/24",
-                    "217.12.110.0/24",
-                    "185.179.144.0/22",
-                    "185.179.144.0/24",
-                    "185.179.145.0/24",
-                    "185.179.146.0/24",
-                    "185.179.147.0/24",
-                    "195.242.82.0/23",
-                    "195.242.82.0/24",
-                    "195.242.83.0/24",
-                    "217.14.48.0/20",
-                    "217.14.57.0/24",
-                    "217.14.59.0/24",
-                    "217.14.62.0/24",
-                    "217.14.63.0/24",
-                    "46.226.122.0/24",
-                    "91.212.64.0/24",
-                    "91.223.93.0/24",
-                    "185.73.192.0/22",
-                    "185.73.192.0/24",
-                    "185.73.194.0/24",
-                    "185.73.193.0/24",
-                    "185.73.195.0/24",
-                    "195.34.20.0/23",
-                    "85.198.76.0/22",
-                    "85.198.76.0/24",
-                    "85.198.77.0/24",
-                    "85.198.78.0/24",
-                    "85.198.79.0/24",
-                    "91.230.107.0/24",
-                    "185.62.200.0/23",
-                    "185.62.202.0/24",
-                    "185.138.252.0/22",
-                    "185.138.252.0/24",
-                    "185.138.253.0/24",
-                    "185.138.255.0/24",
-                    "194.1.214.0/24",
-                    "213.184.155.0/24",
-                    "213.184.156.0/22",
-                    "213.184.156.0/24",
-                    "176.114.120.0/21",
-                    "176.114.120.0/22",
-                    "176.114.120.0/23",
-                    "176.114.120.0/24",
-                    "176.114.121.0/24",
-                    "176.114.122.0/23",
-                    "176.114.122.0/24",
-                    "176.114.123.0/24",
-                    "176.114.124.0/22",
-                    "176.114.124.0/23",
-                    "176.114.124.0/24",
-                    "176.114.125.0/24",
-                    "185.89.12.0/24",
-                    "185.89.14.0/23",
-                    "185.89.14.0/24",
-                    "185.89.15.0/24"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "balancerTag": "auto_wifi",
-                "domain": [
-                    "geosite:telegram",
-                    "domain:t.me",
-                    "domain:tdesktop.com",
-                    "domain:telegram.me",
-                    "domain:telegram.org",
-                    "domain:telesco.pe",
-                    "domain:telegra.ph",
-                    "domain:fragment.com",
-                    "regexp:^(.+\\.)?telegra\\.ph$",
-                    "regexp:^(.+\\.)?telegram\\.org$",
-                    "regexp:^(.+\\.)?t\\.me$"
-                ],
-                "type": "field"
-            },
-            {
-                "balancerTag": "auto_wifi",
-                "ip": [
-                    "geoip:telegram",
-                    "91.108.4.0/22",
-                    "91.108.8.0/22",
-                    "91.108.12.0/22",
-                    "91.108.16.0/22",
-                    "91.108.20.0/22",
-                    "91.108.56.0/22",
-                    "149.154.160.0/20",
-                    "185.76.151.0/24"
-                ],
-                "type": "field"
-            },
-            {
-                "balancerTag": "auto_wifi",
-                "network": "tcp,udp",
-                "type": "field"
-            }
-        ]
+            "type": "leastPing"
+          },
+          "tag": "auto_wifi"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "outboundTag": "direct",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "geosite:category-gov-ru",
+            "domain:gosuslugi.ru",
+            "domain:esia.gosuslugi.ru",
+            "domain:dom.gosuslugi.ru",
+            "domain:pos.gosuslugi.ru",
+            "domain:gu-st.ru",
+            "domain:gov.ru",
+            "domain:nalog.ru",
+            "domain:nalog.gov.ru",
+            "domain:customs.gov.ru",
+            "domain:pfr.gov.ru",
+            "domain:sfr.gov.ru",
+            "domain:mos.ru",
+            "domain:spb.ru",
+            "domain:mvd.ru",
+            "domain:mvd.gov.ru",
+            "domain:gibdd.ru",
+            "domain:fssp.gov.ru",
+            "domain:cbr.ru",
+            "domain:dnevnik.ru",
+            "domain:myschool.edu.ru",
+            "domain:pervye.ru",
+            "domain:sferum.ru",
+            "domain:sferum-dev.ru",
+            "domain:ege.edu.ru",
+            "domain:rzd.ru",
+            "domain:ticket.rzd.ru",
+            "domain:rzd-bonus.ru",
+            "domain:pochta.ru",
+            "domain:rustore.ru",
+            "domain:ruwiki.ru",
+            "domain:rosreestr.gov.ru",
+            "domain:kremlin.ru",
+            "domain:council.gov.ru",
+            "domain:duma.gov.ru",
+            "domain:zakupki.gov.ru",
+            "domain:sudrf.ru",
+            "domain:mos-gorsud.ru",
+            "regexp:^(.+\\.)?gosuslugi\\.ru$",
+            "regexp:^(.+\\.)?gov\\.ru$",
+            "regexp:^(.+\\.)?rzd\\.ru$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:dixy.ru",
+            "domain:5ka.ru",
+            "domain:5post.market",
+            "domain:x5.ru",
+            "domain:x5club.ru",
+            "domain:perekrestok.ru",
+            "domain:vprok.ru",
+            "domain:chizhik.club",
+            "domain:magnit.ru",
+            "domain:magnit.com",
+            "domain:samokat.ru",
+            "domain:kuper.ru",
+            "domain:sbermarket.ru",
+            "domain:lenta.com",
+            "domain:lenta.ru",
+            "domain:auchan.ru",
+            "domain:metro-cc.ru",
+            "domain:vkusvill.ru",
+            "domain:globus.ru",
+            "domain:okeydostavka.ru",
+            "domain:av.ru",
+            "domain:fix-price.com",
+            "domain:fix-price.ru",
+            "domain:krasnoeibeloe.ru",
+            "domain:bristol.ru",
+            "domain:wildberries.ru",
+            "domain:wbbasket.ru",
+            "domain:wb-basket.ru",
+            "domain:wb.ru",
+            "domain:geobasket.ru",
+            "domain:rwb.ru",
+            "domain:wibes.ru",
+            "domain:ozon.ru",
+            "domain:ozon.by",
+            "domain:ozon.com",
+            "domain:ozon.com.by",
+            "domain:ozon.com.kz",
+            "domain:ozon.kz",
+            "domain:ozon.tm",
+            "domain:ozone.ru",
+            "domain:ozonru.me",
+            "domain:ozonusercontent.com",
+            "domain:o3.ru",
+            "domain:o3t.ru",
+            "domain:o3team.ru",
+            "domain:ozon-dostavka.ru",
+            "domain:ozonpartners.ru",
+            "domain:avito.ru",
+            "domain:avito.st",
+            "domain:megamarket.ru",
+            "domain:megamarket.tech",
+            "domain:market.yandex.ru",
+            "domain:dns-shop.ru",
+            "domain:mvideo.ru",
+            "domain:eldorado.ru",
+            "domain:citilink.ru",
+            "domain:lemanapro.ru",
+            "domain:leroymerlin.ru",
+            "domain:vseinstrumenti.ru",
+            "domain:petrovich.ru",
+            "domain:dodopizza.ru",
+            "domain:burgerkingrus.ru",
+            "domain:vkusnoitochka.ru",
+            "domain:rostics.ru",
+            "domain:kfc.ru",
+            "domain:eapteka.ru",
+            "domain:apteka.ru",
+            "domain:asna.ru",
+            "domain:zdravcity.ru",
+            "domain:366.ru",
+            "regexp:^(.+\\.)?dixy\\.ru$",
+            "regexp:^(.+\\.)?x5.*\\.ru$",
+            "regexp:^(.+\\.)?wb\\.ru$",
+            "regexp:^(.+\\.)?wildberries\\.ru$",
+            "regexp:^(.+\\.)?ozon(e)?\\.ru$",
+            "regexp:^(.+\\.)?lemanapro\\.ru$",
+            "regexp:^[0-9]{2}\\.img\\.avito\\.st$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:vk.com",
+            "domain:vk.ru",
+            "domain:id.vk.com",
+            "domain:userapi.com",
+            "domain:vk-cdn.net",
+            "domain:st.mycdn.me",
+            "domain:login.vk.com",
+            "domain:oauth.vk.ru",
+            "domain:stats.vk-portal.net",
+            "domain:vkcdnservice.com",
+            "domain:vk.me",
+            "domain:vk.cc",
+            "domain:vkuservideo.net",
+            "domain:vkuseraudio.net",
+            "domain:api.vk.com",
+            "domain:vkapps.com",
+            "domain:vkforms.ru",
+            "domain:vk-portal.net",
+            "domain:m.vk.com",
+            "domain:st1-19.vk.com",
+            "domain:st1-18.vk.com",
+            "domain:queuev4.vk.com",
+            "domain:vkuser.net",
+            "domain:vkvideo.ru",
+            "domain:cdnsix.vk-com.ru",
+            "domain:ok.ru",
+            "domain:okcdn.ru",
+            "domain:mycdn.me",
+            "domain:742231.ms.ok.ru",
+            "full:st-ok-pts.cdn-vk.ru",
+            "full:st-ok.cdn-vk.ru",
+            "domain:mail.ru",
+            "domain:my.mail.ru",
+            "domain:e.mail.ru",
+            "domain:cloud.mail.ru",
+            "domain:oneme.ru",
+            "domain:max.ru",
+            "domain:boosty.to",
+            "domain:rutube.ru",
+            "domain:kinopoisk.ru",
+            "domain:ivi.ru",
+            "domain:okko.tv",
+            "domain:kion.ru",
+            "domain:premier.one",
+            "domain:smotrim.ru",
+            "domain:1tv.ru",
+            "domain:1internet.tv",
+            "domain:vgtrk.ru",
+            "domain:ntv.ru",
+            "domain:matchtv.ru",
+            "domain:mts.ru",
+            "domain:beeline.ru",
+            "domain:megafon.ru",
+            "domain:tele2.ru",
+            "domain:t2.ru",
+            "domain:yota.ru",
+            "domain:rt.ru",
+            "domain:rostelecom.ru",
+            "domain:dom.ru",
+            "domain:motivtelecom.ru",
+            "domain:2gis.ae",
+            "domain:2gis.am",
+            "domain:2gis.az",
+            "domain:2gis.by",
+            "domain:2gis.com",
+            "domain:2gis.com.cy",
+            "domain:2gis.cz",
+            "domain:2gis.ge",
+            "domain:2gis.kg",
+            "domain:2gis.kz",
+            "domain:2gis.ru",
+            "domain:2gis.tj",
+            "domain:2gis.ua",
+            "domain:2gis.uz",
+            "domain:ams2-cdn.2gis.com",
+            "domain:d-assets.2gis.ru",
+            "domain:disk.2gis.com",
+            "domain:reviews.2gis.com",
+            "domain:citydrive.ru",
+            "domain:taximaxim.ru",
+            "domain:drive2.ru",
+            "domain:auto.ru",
+            "domain:hh.ru",
+            "domain:superjob.ru",
+            "domain:habr.com",
+            "domain:gismeteo.ru",
+            "domain:rp5.ru",
+            "domain:rbc.ru",
+            "domain:ria.ru",
+            "domain:lenta.ru",
+            "domain:gazeta.ru",
+            "domain:kp.ru",
+            "domain:aif.ru",
+            "domain:rg.ru",
+            "domain:tass.ru",
+            "domain:kommersant.ru",
+            "domain:rambler.ru",
+            "domain:rambler-co.ru",
+            "domain:forbes.ru",
+            "domain:47news.ru",
+            "domain:1c.ru",
+            "domain:1c-bitrix.ru",
+            "domain:1cfresh.com",
+            "domain:1cloud.ru",
+            "domain:bitrix24.ru",
+            "domain:kontur.ru",
+            "domain:kontur.host",
+            "domain:reg.ru",
+            "domain:nic.ru",
+            "domain:selectel.ru",
+            "domain:timeweb.com",
+            "domain:beget.com",
+            "domain:dellin.ru",
+            "domain:cdek.ru",
+            "domain:tutu.ru",
+            "domain:flypobeda.ru",
+            "domain:aeroflot.ru",
+            "domain:s7.ru",
+            "domain:uralairlines.ru",
+            "domain:sirena-travel.ru",
+            "domain:bronevik.com",
+            "domain:ostrovok.ru",
+            "domain:platformaofd.ru",
+            "domain:sb.scorecardresearch.com",
+            "domain:stbid.ru",
+            "domain:adriver.ru",
+            "domain:flocktory.com",
+            "domain:uxfeedback.ru",
+            "domain:serverstats.ru",
+            "domain:speedstream.ru",
+            "domain:clstorage.net",
+            "domain:yadro.ru",
+            "domain:csat.ru",
+            "domain:cscampus.ru",
+            "domain:4meeting.me",
+            "domain:8ofpsm7zqu.a.trbcdn.net",
+            "domain:abr.ru",
+            "domain:aclub.ru",
+            "domain:alformacap.com",
+            "domain:alformacapital.com",
+            "domain:domclick.ru",
+            "domain:cian.ru",
+            "domain:tank-online.com",
+            "domain:tildaapi.com",
+            "domain:tns-counter.ru",
+            "domain:xn----7sb7akeedqd.xn--p1ai",
+            "domain:xn--80aacoonefzg3am8b1fsb.xn--p1ai",
+            "domain:xn--90ab2c.xn--p1ai",
+            "domain:xn--90aifd0aza.site",
+            "domain:xn--b1aew.xn--p1ai",
+            "regexp:^.*\\.vk\\.com$",
+            "regexp:^.*\\.mail\\.ru$",
+            "regexp:^.*\\.ok\\.ru$",
+            "regexp:^.*\\.odnoklassniki\\.ru$",
+            "regexp:^.*\\.my\\.mail\\.ru$",
+            "regexp:^.*\\.e\\.mail\\.ru$",
+            "regexp:^.*\\.vk-portal\\.net$",
+            "regexp:^(.+\\.)?rutube\\.ru$",
+            "regexp:^(.+\\.)?kinopoisk\\.ru$",
+            "regexp:^(.+\\.)?mts.*\\.ru$",
+            "regexp:^(.+\\.)?dzen.*\\.ru$",
+            "regexp:^(.+\\.)?beeline\\.ru$",
+            "regexp:^(.+\\.)?megafon\\.ru$",
+            "regexp:^(.+\\.)?t(2|ele2)\\.ru$",
+            "regexp:^api\\.(a\\.mts|avito|expf|max|mindbox)\\.ru$",
+            "regexp:^sun[0-9]+(-[0-9]+)?\\.userapi\\.com$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:yandex.ru",
+            "domain:ya.ru",
+            "domain:yandexwebcache.net",
+            "domain:yandexwebcache.org",
+            "domain:yastat.net",
+            "domain:yastatic.net",
+            "domain:yads.tech",
+            "domain:yandex",
+            "domain:yandex-bank.net",
+            "domain:yandex.aero",
+            "domain:yandex.az",
+            "domain:yandex.by",
+            "domain:yandex.cloud",
+            "domain:yandex.co.il",
+            "domain:yandex.com",
+            "domain:yandex.com.ge",
+            "domain:yandex.eu",
+            "domain:yandex.fr",
+            "domain:yandex.jobs",
+            "domain:yandex.kg",
+            "domain:yandex.kz",
+            "domain:yandex.net",
+            "domain:yandex.org",
+            "domain:yandexadexchange.net",
+            "domain:yandexcloud.net",
+            "domain:yandexcom.net",
+            "domain:yandexmetrica.com",
+            "domain:yandex.st",
+            "domain:yccdn.ru",
+            "domain:300.ya.ru",
+            "domain:avatars.mds.yandex.net",
+            "domain:d5de4k0ri8jba7ucdbt6.apigw.yandexcloud.net",
+            "regexp:^.*\\.yandex\\.net$",
+            "regexp:^[0-9]+\\.mc\\.yandex\\.ru$"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "domain": [
+            "domain:mtalk.google.com",
+            "domain:push.apple.com",
+            "domain:*.push.apple.com",
+            "domain:identity.apple.com",
+            "domain:*.appattest.apple.com",
+            "domain:deviceenrollment.apple.com",
+            "domain:deviceservices-external.apple.com"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "17.0.0.0/8",
+            "193.200.10.0/23",
+            "91.223.63.0/24",
+            "217.12.96.0/24",
+            "217.12.97.0/24",
+            "217.12.98.0/24",
+            "217.12.99.0/24",
+            "217.12.100.0/24",
+            "217.12.101.0/24",
+            "217.12.102.0/24",
+            "217.12.103.0/24",
+            "217.12.104.0/24",
+            "217.12.105.0/24",
+            "217.12.106.0/24",
+            "217.12.110.0/24",
+            "185.179.144.0/22",
+            "185.179.144.0/24",
+            "185.179.145.0/24",
+            "185.179.146.0/24",
+            "185.179.147.0/24",
+            "195.242.82.0/23",
+            "195.242.82.0/24",
+            "195.242.83.0/24",
+            "217.14.48.0/20",
+            "217.14.57.0/24",
+            "217.14.59.0/24",
+            "217.14.62.0/24",
+            "217.14.63.0/24",
+            "46.226.122.0/24",
+            "91.212.64.0/24",
+            "91.223.93.0/24",
+            "185.73.192.0/22",
+            "185.73.192.0/24",
+            "185.73.194.0/24",
+            "185.73.193.0/24",
+            "185.73.195.0/24",
+            "195.34.20.0/23",
+            "85.198.76.0/22",
+            "85.198.76.0/24",
+            "85.198.77.0/24",
+            "85.198.78.0/24",
+            "85.198.79.0/24",
+            "91.230.107.0/24",
+            "185.62.200.0/23",
+            "185.62.202.0/24",
+            "185.138.252.0/22",
+            "185.138.252.0/24",
+            "185.138.253.0/24",
+            "185.138.255.0/24",
+            "194.1.214.0/24",
+            "213.184.155.0/24",
+            "213.184.156.0/22",
+            "213.184.156.0/24",
+            "176.114.120.0/21",
+            "176.114.120.0/22",
+            "176.114.120.0/23",
+            "176.114.120.0/24",
+            "176.114.121.0/24",
+            "176.114.122.0/23",
+            "176.114.122.0/24",
+            "176.114.123.0/24",
+            "176.114.124.0/22",
+            "176.114.124.0/23",
+            "176.114.124.0/24",
+            "176.114.125.0/24",
+            "185.89.12.0/24",
+            "185.89.14.0/23",
+            "185.89.14.0/24",
+            "185.89.15.0/24"
+          ],
+          "outboundTag": "direct",
+          "type": "field"
+        },
+        {
+          "balancerTag": "auto_wifi",
+          "domain": [
+            "geosite:telegram",
+            "domain:t.me",
+            "domain:tdesktop.com",
+            "domain:telegram.me",
+            "domain:telegram.org",
+            "domain:telesco.pe",
+            "domain:telegra.ph",
+            "domain:fragment.com",
+            "regexp:^(.+\\.)?telegra\\.ph$",
+            "regexp:^(.+\\.)?telegram\\.org$",
+            "regexp:^(.+\\.)?t\\.me$"
+          ],
+          "type": "field"
+        },
+        {
+          "balancerTag": "auto_wifi",
+          "ip": [
+            "geoip:telegram",
+            "91.108.4.0/22",
+            "91.108.8.0/22",
+            "91.108.12.0/22",
+            "91.108.16.0/22",
+            "91.108.20.0/22",
+            "91.108.56.0/22",
+            "149.154.160.0/20",
+            "185.76.151.0/24"
+          ],
+          "type": "field"
+        },
+        {
+          "balancerTag": "auto_wifi",
+          "network": "tcp,udp",
+          "type": "field"
+        }
+      ]
+    }
   },
   {
     "dns": {
