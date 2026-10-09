@@ -148,7 +148,8 @@
   "remarks": "🇳🇱 Нидерланды",
   "meta": {
     "serverDescription": "Для WiFi (не тратит ГБ)"
-  },
+  }
+ },
   {
     "dns": {
       "disableCache": false,
