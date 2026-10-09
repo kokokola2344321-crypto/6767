@@ -845,974 +845,831 @@
           "type": "field"
         },
         {
-          "ip": [
-            "127.0.0.0/8",
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "100.64.0.0/10",
-            "224.0.0.0/4",
-            "255.255.255.255/32",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "proxy",
-          "port": "0-65535",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "burstObservatory": {
-      "pingConfig": {
-        "connectivity": "",
-        "destination": "https://max.ru/",
-        "interval": "15s",
-        "sampling": 2,
-        "timeout": "3s"
-      },
-      "subjectSelector": ["WIFI_"]
-    },
     "dns": {
-      "queryStrategy": "UseIP",
-      "servers": ["77.88.8.8", "77.88.8.1", "8.8.8.8"]
+        "disableCache": false,
+        "disableFallback": false,
+        "queryStrategy": "UseIPv4",
+        "servers": [
+            {
+                "address": "77.88.8.8",
+                "domains": [
+                    "domain:ad.mail.ru",
+                    "domain:addthis.com",
+                    "domain:adfox.ru",
+                    "domain:adfox.yandex.ru",
+                    "domain:adjust.com",
+                    "domain:adlabs.ru",
+                    "domain:adriver.ru",
+                    "domain:ads.mail.ru",
+                    "domain:ads.vk.com",
+                    "domain:ads.yandex.ru",
+                    "domain:adsafeprotected.com",
+                    "domain:adservice.google.com",
+                    "domain:adsmart.ru",
+                    "domain:adsrvr.org",
+                    "domain:adsterra.com",
+                    "domain:adtarget.me",
+                    "domain:amplitude.com",
+                    "domain:an.yandex.ru",
+                    "domain:appmetrica.yandex.ru",
+                    "domain:appsflyer.com",
+                    "domain:apptracer.ru",
+                    "domain:astralab.ru",
+                    "domain:awaps.yandex.net",
+                    "domain:betweendigital.com",
+                    "domain:buzzoola.com",
+                    "domain:calltouch.ru",
+                    "domain:chartbeat.com",
+                    "domain:clarity.ms",
+                    "domain:connect.facebook.net",
+                    "domain:counter.rambler.ru",
+                    "domain:counter.yadro.ru",
+                    "domain:criteo.com",
+                    "domain:criteo.net",
+                    "domain:devtodev.com",
+                    "domain:digitaltarget.ru",
+                    "domain:doubleclick.net",
+                    "domain:doubleverify.com",
+                    "domain:flocktory.com",
+                    "domain:flurry.com",
+                    "domain:getintent.com",
+                    "domain:gnezdo.ru",
+                    "domain:google-analytics.com",
+                    "domain:googleadservices.com",
+                    "domain:googlesyndication.com",
+                    "domain:googletagmanager.com",
+                    "domain:hotjar.com",
+                    "domain:hotlog.ru",
+                    "domain:kochava.com",
+                    "domain:lentainform.com",
+                    "domain:liveinternet.ru",
+                    "domain:luckyads.pro",
+                    "domain:marketgid.com",
+                    "domain:mc.yandex.com",
+                    "domain:mc.yandex.ru",
+                    "domain:mediametrics.ru",
+                    "domain:mediascope.net",
+                    "domain:mediasniper.ru",
+                    "domain:mindbox.ru",
+                    "domain:mixpanel.com",
+                    "domain:moatads.com",
+                    "domain:mytracker.ru",
+                    "domain:openx.net",
+                    "domain:otm-r.com",
+                    "domain:outbrain.com",
+                    "domain:propellerads.com",
+                    "domain:pubmatic.com",
+                    "domain:quantserve.com",
+                    "domain:r.mradx.net",
+                    "domain:relap.io",
+                    "domain:report.appmetrica.yandex.net",
+                    "domain:retailrocket.net",
+                    "domain:retailrocket.ru",
+                    "domain:roistat.com",
+                    "domain:rubiconproject.com",
+                    "domain:rutarget.ru",
+                    "domain:scorecardresearch.com",
+                    "domain:singular.net",
+                    "domain:smi2.ru",
+                    "domain:solocpm.com",
+                    "domain:soloway.ru",
+                    "domain:startup.mobile.yandex.net",
+                    "domain:taboola.com",
+                    "domain:target.my.com",
+                    "domain:tenjin.io",
+                    "domain:tns-counter.ru",
+                    "domain:top-fwz1.mail.ru",
+                    "domain:top.mail.ru",
+                    "domain:top100.rambler.ru",
+                    "domain:tracker.my.com",
+                    "domain:uptolike.com",
+                    "domain:videonow.ru",
+                    "domain:yandexadexchange.net",
+                    "domain:yieldmo.com",
+                    "regexp:\\.(ru|su|moscow|tatar)$",
+                    "regexp:\\.xn--(p1ai|p1acf|d1acj3b|c1avg|80aswg|80asehdb|80adxhks)$",
+                    "regexp:^(.+\\.)?(vk|vkontakte|vkplay|vkvideo|userapi|vkuser|vkuseraudio|vkuservideo|vkuserlive|mycdn|mradx|yandex|ya|yastatic|yandexcloud|yandexmetrica|yadi|sberbank|sberdevices|sbermarket|sbermegamarket|sbrf|tinkoff|tbank|alfabank|gazprombank|sovcombank|raiffeisen|yoomoney|qiwi|nspk|mironline|ozon|wildberries|wbbasket|wbstatic|avito|lamoda|lmcdn|megamarket|citilink|mvideo|dns-shop|sportmaster|magnit|perekrestok|pyaterochka|vprok|samokat|kuper|kinopoisk|okko|ivi|dzen|rutube|smotrim|kion|litres|zvuk|boosty|vgtrk|gosuslugi|hh|superjob|cian|domclick|drom|2gis|gismeteo|rambler|pikabu|habr|rustore|beeline|megafon|mts|yota|rzd|aeroflot|pochta|cdnvideo|ngenix|selectel|timeweb|drweb|lesta)\\.[a-z]{2,6}$",
+                    "regexp:^(.+\\.)?(lenta|rt|tass|vtb|1cfresh|beget)\\.com$",
+                    "regexp:^(.+\\.)?(vk-cdn|vk-portal)\\.net$",
+                    "regexp:^(.+\\.)?vk-apps\\.com$",
+                    "regexp:^(.+\\.)?premier\\.one$",
+                    "regexp:^(.+\\.)?more\\.tv$",
+                    "regexp:^(.+\\.)?pobeda\\.aero$",
+                    "regexp:^(.+\\.)?yandex\\.com\\.tr$"
+                ],
+                "skipFallback": true
+            },
+            "https://1.1.1.1/dns-query",
+            "https://8.8.8.8/dns-query"
+        ]
     },
     "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "est2.bolvankamax.com",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "realitySettings": {
-            "fingerprint": "qq",
-            "publicKey": "l5_EHPg0T4EvagTn883oushyUwVU_GGHDsZr7hHEfXg",
-            "serverName": "www.zalando.de",
-            "shortId": "a41b4f92d7bf092d"
-          },
-          "security": "reality",
-          "xhttpSettings": {
-            "host": "",
-            "mode": "auto",
-            "path": "/55f318edd8b4"
-          }
-        },
-        "tag": "WIFI_"
-      },
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "est2.bolvankamax.com",
-              "port": 4444,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision",
-                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "realitySettings": {
-            "fingerprint": "edge",
-            "publicKey": "hoOzH-ZQhsiiqRh2mgf91nFNFWt7FT-UH-oQbdM4b3E",
-            "serverName": "www.zalando.de",
-            "shortId": "360efa96f0829c23"
-          },
-          "security": "reality",
-          "tcpSettings": {}
-        },
-        "tag": "WIFI_-2"
-      },
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "178.176.128.128",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": ["h2", "http/1.1"],
-            "enableSessionResumption": false,
-            "fingerprint": "firefox",
-            "serverName": "vkcdn.bolvankamax.com"
-          },
-          "xhttpSettings": {
-            "extra": {
-              "enableXmux": true,
-              "mode": "packet-up",
-              "noGRPCHeader": false,
-              "noSSEHeader": false,
-              "scMaxBufferedPosts": 30,
-              "scMaxEachPostBytes": 1000000,
-              "scStreamUpServerSecs": "20-80",
-              "seqKey": "id",
-              "seqPlacement": "query",
-              "sessionIDKey": "session",
-              "sessionIDPlacement": "query",
-              "uplinkHTTPMethod": "GET",
-              "xPaddingBytes": "100-1000",
-              "xPaddingKey": "token",
-              "xPaddingMethod": "tokenish",
-              "xPaddingObfsMode": true,
-              "xPaddingPlacement": "query",
-              "xmux": {
-                "cMaxReuseTimes": 100,
-                "hKeepAlivePeriod": 0,
-                "hMaxRequestTimes": "600-900",
-                "hMaxReusableSecs": "1800-3000",
-                "maxConcurrency": "16-32",
-                "maxConnections": 0
-              }
-            },
-            "host": "vkcdn.bolvankamax.com",
-            "mode": "packet-up",
-            "path": "/static/getFile/video/segment.ts"
-          }
-        },
-        "tag": "FALLBACK_"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇪🇪📋 Эстония - АвтоБС",
-    "routing": {
-      "balancers": [
         {
-          "fallbackTag": "FALLBACK_",
-          "selector": ["WIFI_"],
-          "strategy": {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
             "settings": {
-              "baselines": ["1s"],
-              "expected": 2,
-              "maxRTT": "1s",
-              "tolerance": 0.01
+                "auth": "noauth",
+                "udp": true,
+                "userLevel": 8
             },
-            "type": "leastPing"
-          },
-          "tag": "auto_wifi"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "protocol": ["bittorrent"],
-          "type": "field"
-        },
-        {
-          "ip": ["geoip:private"],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "geosite:category-gov-ru",
-            "domain:gosuslugi.ru",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:dixy.ru",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:vk.com",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:yandex.ru",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:mtalk.google.com",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "17.0.0.0/8",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "balancerTag": "auto_wifi",
-          "domain": [
-            "geosite:telegram",
-            "domain:t.me",
-            "..."
-          ],
-          "type": "field"
-        },
-        {
-          "balancerTag": "auto_wifi",
-          "ip": [
-            "geoip:telegram",
-            "..."
-          ],
-          "type": "field"
-        },
-        {
-          "balancerTag": "auto_wifi",
-          "network": "tcp,udp",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "burstObservatory": {
-      "pingConfig": {
-        "connectivity": "",
-        "destination": "https://max.ru/",
-        "interval": "15s",
-        "sampling": 2,
-        "timeout": "3s"
-      },
-      "subjectSelector": ["WIFI_"]
-    },
-    "dns": {
-      "queryStrategy": "UseIP",
-      "servers": ["77.88.8.8", "77.88.8.1", "8.8.8.8"]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "meta": null,
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "bspl.mamutrahal.top",
-              "port": 4444,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision",
-                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "realitySettings": {
-            "fingerprint": "firefox",
-            "publicKey": "hoOzH-ZQhsiiqRh2mgf91nFNFWt7FT-UH-oQbdM4b3E",
-            "serverName": "www.zalando.de",
-            "shortId": "360efa96f0829c23"
-          },
-          "security": "reality",
-          "tcpSettings": {}
-        },
-        "tag": "WIFI_"
-      },
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "bsplvk.mamutrahal.top",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": ["h2", "http/1.1"],
-            "enableSessionResumption": false,
-            "fingerprint": "firefox",
-            "serverName": "bsplvk.mamutrahal.top"
-          },
-          "xhttpSettings": {
-            "extra": {
-              "enableXmux": true,
-              "mode": "packet-up",
-              "noGRPCHeader": false,
-              "noSSEHeader": false,
-              "scMaxBufferedPosts": 30,
-              "scMaxEachPostBytes": 1000000,
-              "scStreamUpServerSecs": "20-80",
-              "seqKey": "id",
-              "seqPlacement": "query",
-              "sessionIDKey": "session",
-              "sessionIDPlacement": "query",
-              "uplinkHTTPMethod": "GET",
-              "xPaddingBytes": "100-1000",
-              "xPaddingKey": "token",
-              "xPaddingMethod": "tokenish",
-              "xPaddingObfsMode": true,
-              "xPaddingPlacement": "query",
-              "xmux": {
-                "cMaxReuseTimes": 100,
-                "hKeepAlivePeriod": 0,
-                "hMaxRequestTimes": "600-900",
-                "hMaxReusableSecs": "1800-3000",
-                "maxConcurrency": "16-32",
-                "maxConnections": 0
-              }
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls"
+                ],
+                "enabled": true,
+                "routeOnly": false
             },
-            "host": "bsplvk.mamutrahal.top",
-            "mode": "packet-up",
-            "path": "/static/getFile/video/segment.ts"
-          }
+            "tag": "socks"
         },
-        "tag": "FALLBACK_"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇵🇱📋 Польша - АвтоБС",
-    "routing": {
-      "balancers": [
         {
-          "fallbackTag": "FALLBACK_",
-          "selector": ["WIFI_"],
-          "strategy": {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
             "settings": {
-              "baselines": ["1s"],
-              "expected": 2,
-              "maxRTT": "1s",
-              "tolerance": 0.01
+                "userLevel": 8
             },
-            "type": "leastPing"
-          },
-          "tag": "auto_wifi"
+            "tag": "http"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10853,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "77.88.8.8",
+                "network": "tcp,udp",
+                "port": 53
+            },
+            "tag": "dns-in"
         }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "protocol": ["bittorrent"],
-          "type": "field"
-        },
-        {
-          "ip": ["geoip:private"],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "geosite:category-gov-ru",
-            "domain:gosuslugi.ru",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:dixy.ru",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:vk.com",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:yandex.ru",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:mtalk.google.com",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "ip": [
-            "17.0.0.0/8",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "balancerTag": "auto_wifi",
-          "domain": [
-            "geosite:telegram",
-            "domain:t.me",
-            "..."
-          ],
-          "type": "field"
-        },
-        {
-          "balancerTag": "auto_wifi",
-          "ip": [
-            "geoip:telegram",
-            "..."
-          ],
-          "type": "field"
-        },
-        {
-          "balancerTag": "auto_wifi",
-          "network": "tcp,udp",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "disableCache": false,
-      "disableFallback": false,
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        {
-          "address": "77.88.8.8",
-          "domains": [
-            "domain:ad.mail.ru",
-            "..."
-          ],
-          "skipFallback": true
-        },
-        "https://1.1.1.1/dns-query",
-        "https://8.8.8.8/dns-query"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true,
-          "userLevel": 8
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "userLevel": 8
-        },
-        "tag": "http"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10853,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "77.88.8.8",
-          "network": "tcp,udp",
-          "port": 53
-        },
-        "tag": "dns-in"
-      }
     ],
     "log": {
-      "loglevel": "warning"
+        "loglevel": "warning"
     },
     "meta": null,
     "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "bsplvk.mamutrahal.top",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": ["h2", "http/1.1"],
-            "enableSessionResumption": false,
-            "fingerprint": "firefox",
-            "serverName": "bsplvk.mamutrahal.top"
-          },
-          "xhttpSettings": {
-            "extra": {
-              "enableXmux": true,
-              "mode": "packet-up",
-              "noGRPCHeader": false,
-              "noSSEHeader": false,
-              "scMaxBufferedPosts": 30,
-              "scMaxEachPostBytes": 1000000,
-              "scStreamUpServerSecs": "20-80",
-              "seqKey": "id",
-              "seqPlacement": "query",
-              "sessionIDKey": "session",
-              "sessionIDPlacement": "query",
-              "uplinkHTTPMethod": "GET",
-              "xPaddingBytes": "100-1000",
-              "xPaddingKey": "token",
-              "xPaddingMethod": "tokenish",
-              "xPaddingObfsMode": true,
-              "xPaddingPlacement": "query",
-              "xmux": {
-                "cMaxReuseTimes": 100,
-                "hKeepAlivePeriod": 0,
-                "hMaxRequestTimes": "600-900",
-                "hMaxReusableSecs": "1800-3000",
-                "maxConcurrency": "16-32",
-                "maxConnections": 0
-              }
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "178.176.128.128",
+                        "port": 443,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "",
+                                "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
+                            }
+                        ]
+                    }
+                ]
             },
-            "host": "bsplvk.mamutrahal.top",
-            "mode": "packet-up",
-            "path": "/static/getFile/video/segment.ts"
-          }
+            "streamSettings": {
+                "network": "xhttp",
+                "security": "tls",
+                "tlsSettings": {
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "enableSessionResumption": false,
+                    "fingerprint": "firefox",
+                    "serverName": "vkcdn.bolvankamax.com"
+                },
+                "xhttpSettings": {
+                    "extra": {
+                        "enableXmux": true,
+                        "mode": "packet-up",
+                        "noGRPCHeader": false,
+                        "noSSEHeader": false,
+                        "scMaxBufferedPosts": 30,
+                        "scMaxEachPostBytes": 1000000,
+                        "scStreamUpServerSecs": "20-80",
+                        "seqKey": "id",
+                        "seqPlacement": "query",
+                        "sessionIDKey": "session",
+                        "sessionIDPlacement": "query",
+                        "uplinkHTTPMethod": "GET",
+                        "xPaddingBytes": "100-1000",
+                        "xPaddingKey": "token",
+                        "xPaddingMethod": "tokenish",
+                        "xPaddingObfsMode": true,
+                        "xPaddingPlacement": "query",
+                        "xmux": {
+                            "cMaxReuseTimes": 100,
+                            "hKeepAlivePeriod": 0,
+                            "hMaxRequestTimes": "600-900",
+                            "hMaxReusableSecs": "1800-3000",
+                            "maxConcurrency": "16-32",
+                            "maxConnections": 0
+                        }
+                    },
+                    "host": "vkcdn.bolvankamax.com",
+                    "mode": "packet-up",
+                    "path": "/static/getFile/video/segment.ts"
+                }
+            },
+            "tag": "proxy"
         },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      },
-      {
-        "protocol": "dns",
-        "tag": "dns-out"
-      }
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        },
+        {
+            "protocol": "dns",
+            "tag": "dns-out"
+        }
     ],
     "policy": {
-      "levels": {
-        "8": {
-          "bufferSize": 512,
-          "connIdle": 300,
-          "downlinkOnly": 1,
-          "handshake": 4,
-          "uplinkOnly": 1
+        "levels": {
+            "8": {
+                "bufferSize": 512,
+                "connIdle": 300,
+                "downlinkOnly": 1,
+                "handshake": 4,
+                "uplinkOnly": 1
+            }
+        },
+        "system": {
+            "statsOutboundDownlink": true,
+            "statsOutboundUplink": true
         }
-      },
-      "system": {
-        "statsOutboundDownlink": true,
-        "statsOutboundUplink": true
-      }
+    },
+    "remarks": "🇪🇪📋 Эстония (БС)",
+    "routing": {
+        "domainMatcher": "hybrid",
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "inboundTag": [
+                    "dns-in"
+                ],
+                "outboundTag": "dns-out",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "domain:ad.mail.ru",
+                    "domain:addthis.com",
+                    "domain:adfox.ru",
+                    "domain:adfox.yandex.ru",
+                    "domain:adjust.com",
+                    "domain:adlabs.ru",
+                    "domain:adriver.ru",
+                    "domain:ads.mail.ru",
+                    "domain:ads.vk.com",
+                    "domain:ads.yandex.ru",
+                    "domain:adsafeprotected.com",
+                    "domain:adservice.google.com",
+                    "domain:adsmart.ru",
+                    "domain:adsrvr.org",
+                    "domain:adsterra.com",
+                    "domain:adtarget.me",
+                    "domain:amplitude.com",
+                    "domain:an.yandex.ru",
+                    "domain:appmetrica.yandex.ru",
+                    "domain:appsflyer.com",
+                    "domain:apptracer.ru",
+                    "domain:astralab.ru",
+                    "domain:awaps.yandex.net",
+                    "domain:betweendigital.com",
+                    "domain:buzzoola.com",
+                    "domain:calltouch.ru",
+                    "domain:chartbeat.com",
+                    "domain:clarity.ms",
+                    "domain:connect.facebook.net",
+                    "domain:counter.rambler.ru",
+                    "domain:counter.yadro.ru",
+                    "domain:criteo.com",
+                    "domain:criteo.net",
+                    "domain:devtodev.com",
+                    "domain:digitaltarget.ru",
+                    "domain:doubleclick.net",
+                    "domain:doubleverify.com",
+                    "domain:flocktory.com",
+                    "domain:flurry.com",
+                    "domain:getintent.com",
+                    "domain:gnezdo.ru",
+                    "domain:google-analytics.com",
+                    "domain:googleadservices.com",
+                    "domain:googlesyndication.com",
+                    "domain:googletagmanager.com",
+                    "domain:hotjar.com",
+                    "domain:hotlog.ru",
+                    "domain:kochava.com",
+                    "domain:lentainform.com",
+                    "domain:liveinternet.ru",
+                    "domain:luckyads.pro",
+                    "domain:marketgid.com",
+                    "domain:mc.yandex.com",
+                    "domain:mc.yandex.ru",
+                    "domain:mediametrics.ru",
+                    "domain:mediascope.net",
+                    "domain:mediasniper.ru",
+                    "domain:mindbox.ru",
+                    "domain:mixpanel.com",
+                    "domain:moatads.com",
+                    "domain:mytracker.ru",
+                    "domain:openx.net",
+                    "domain:otm-r.com",
+                    "domain:outbrain.com",
+                    "domain:propellerads.com",
+                    "domain:pubmatic.com",
+                    "domain:quantserve.com",
+                    "domain:r.mradx.net",
+                    "domain:relap.io",
+                    "domain:report.appmetrica.yandex.net",
+                    "domain:retailrocket.net",
+                    "domain:retailrocket.ru",
+                    "domain:roistat.com",
+                    "domain:rubiconproject.com",
+                    "domain:rutarget.ru",
+                    "domain:scorecardresearch.com",
+                    "domain:singular.net",
+                    "domain:smi2.ru",
+                    "domain:solocpm.com",
+                    "domain:soloway.ru",
+                    "domain:startup.mobile.yandex.net",
+                    "domain:taboola.com",
+                    "domain:target.my.com",
+                    "domain:tenjin.io",
+                    "domain:tns-counter.ru",
+                    "domain:top-fwz1.mail.ru",
+                    "domain:top.mail.ru",
+                    "domain:top100.rambler.ru",
+                    "domain:tracker.my.com",
+                    "domain:uptolike.com",
+                    "domain:videonow.ru",
+                    "domain:yandexadexchange.net",
+                    "domain:yieldmo.com"
+                ],
+                "outboundTag": "block",
+                "type": "field"
+            },
+            {
+                "outboundTag": "direct",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "type": "field"
+            },
+            {
+                "ip": [
+                    "127.0.0.0/8",
+                    "10.0.0.0/8",
+                    "172.16.0.0/12",
+                    "192.168.0.0/16",
+                    "169.254.0.0/16",
+                    "100.64.0.0/10",
+                    "224.0.0.0/4",
+                    "255.255.255.255/32",
+                    "::1/128",
+                    "fc00::/7",
+                    "fe80::/10"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "regexp:\\.(ru|su|moscow|tatar)$",
+                    "regexp:\\.xn--(p1ai|p1acf|d1acj3b|c1avg|80aswg|80asehdb|80adxhks)$",
+                    "regexp:^(.+\\.)?(vk|vkontakte|vkplay|vkvideo|userapi|vkuser|vkuseraudio|vkuservideo|vkuserlive|mycdn|mradx|yandex|ya|yastatic|yandexcloud|yandexmetrica|yadi|sberbank|sberdevices|sbermarket|sbermegamarket|sbrf|tinkoff|tbank|alfabank|gazprombank|sovcombank|raiffeisen|yoomoney|qiwi|nspk|mironline|ozon|wildberries|wbbasket|wbstatic|avito|lamoda|lmcdn|megamarket|citilink|mvideo|dns-shop|sportmaster|magnit|perekrestok|pyaterochka|vprok|samokat|kuper|kinopoisk|okko|ivi|dzen|rutube|smotrim|kion|litres|zvuk|boosty|vgtrk|gosuslugi|hh|superjob|cian|domclick|drom|2gis|gismeteo|rambler|pikabu|habr|rustore|beeline|megafon|mts|yota|rzd|aeroflot|pochta|cdnvideo|ngenix|selectel|timeweb|drweb|lesta)\\.[a-z]{2,6}$",
+                    "regexp:^(.+\\.)?(lenta|rt|tass|vtb|1cfresh|beget)\\.com$",
+                    "regexp:^(.+\\.)?(vk-cdn|vk-portal)\\.net$",
+                    "regexp:^(.+\\.)?vk-apps\\.com$",
+                    "regexp:^(.+\\.)?premier\\.one$",
+                    "regexp:^(.+\\.)?more\\.tv$",
+                    "regexp:^(.+\\.)?pobeda\\.aero$",
+                    "regexp:^(.+\\.)?yandex\\.com\\.tr$"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "outboundTag": "proxy",
+                "port": "0-65535",
+                "type": "field"
+            },
+            {
+    "dns": {
+        "disableCache": false,
+        "disableFallback": false,
+        "queryStrategy": "UseIPv4",
+        "servers": [
+            {
+                "address": "77.88.8.8",
+                "domains": [
+                    "domain:ad.mail.ru",
+                    "domain:addthis.com",
+                    "domain:adfox.ru",
+                    "domain:adfox.yandex.ru",
+                    "domain:adjust.com",
+                    "domain:adlabs.ru",
+                    "domain:adriver.ru",
+                    "domain:ads.mail.ru",
+                    "domain:ads.vk.com",
+                    "domain:ads.yandex.ru",
+                    "domain:adsafeprotected.com",
+                    "domain:adservice.google.com",
+                    "domain:adsmart.ru",
+                    "domain:adsrvr.org",
+                    "domain:adsterra.com",
+                    "domain:adtarget.me",
+                    "domain:amplitude.com",
+                    "domain:an.yandex.ru",
+                    "domain:appmetrica.yandex.ru",
+                    "domain:appsflyer.com",
+                    "domain:apptracer.ru",
+                    "domain:astralab.ru",
+                    "domain:awaps.yandex.net",
+                    "domain:betweendigital.com",
+                    "domain:buzzoola.com",
+                    "domain:calltouch.ru",
+                    "domain:chartbeat.com",
+                    "domain:clarity.ms",
+                    "domain:connect.facebook.net",
+                    "domain:counter.rambler.ru",
+                    "domain:counter.yadro.ru",
+                    "domain:criteo.com",
+                    "domain:criteo.net",
+                    "domain:devtodev.com",
+                    "domain:digitaltarget.ru",
+                    "domain:doubleclick.net",
+                    "domain:doubleverify.com",
+                    "domain:flocktory.com",
+                    "domain:flurry.com",
+                    "domain:getintent.com",
+                    "domain:gnezdo.ru",
+                    "domain:google-analytics.com",
+                    "domain:googleadservices.com",
+                    "domain:googlesyndication.com",
+                    "domain:googletagmanager.com",
+                    "domain:hotjar.com",
+                    "domain:hotlog.ru",
+                    "domain:kochava.com",
+                    "domain:lentainform.com",
+                    "domain:liveinternet.ru",
+                    "domain:luckyads.pro",
+                    "domain:marketgid.com",
+                    "domain:mc.yandex.com",
+                    "domain:mc.yandex.ru",
+                    "domain:mediametrics.ru",
+                    "domain:mediascope.net",
+                    "domain:mediasniper.ru",
+                    "domain:mindbox.ru",
+                    "domain:mixpanel.com",
+                    "domain:moatads.com",
+                    "domain:mytracker.ru",
+                    "domain:openx.net",
+                    "domain:otm-r.com",
+                    "domain:outbrain.com",
+                    "domain:propellerads.com",
+                    "domain:pubmatic.com",
+                    "domain:quantserve.com",
+                    "domain:r.mradx.net",
+                    "domain:relap.io",
+                    "domain:report.appmetrica.yandex.net",
+                    "domain:retailrocket.net",
+                    "domain:retailrocket.ru",
+                    "domain:roistat.com",
+                    "domain:rubiconproject.com",
+                    "domain:rutarget.ru",
+                    "domain:scorecardresearch.com",
+                    "domain:singular.net",
+                    "domain:smi2.ru",
+                    "domain:solocpm.com",
+                    "domain:soloway.ru",
+                    "domain:startup.mobile.yandex.net",
+                    "domain:taboola.com",
+                    "domain:target.my.com",
+                    "domain:tenjin.io",
+                    "domain:tns-counter.ru",
+                    "domain:top-fwz1.mail.ru",
+                    "domain:top.mail.ru",
+                    "domain:top100.rambler.ru",
+                    "domain:tracker.my.com",
+                    "domain:uptolike.com",
+                    "domain:videonow.ru",
+                    "domain:yandexadexchange.net",
+                    "domain:yieldmo.com",
+                    "regexp:\\.(ru|su|moscow|tatar)$",
+                    "regexp:\\.xn--(p1ai|p1acf|d1acj3b|c1avg|80aswg|80asehdb|80adxhks)$",
+                    "regexp:^(.+\\.)?(vk|vkontakte|vkplay|vkvideo|userapi|vkuser|vkuseraudio|vkuservideo|vkuserlive|mycdn|mradx|yandex|ya|yastatic|yandexcloud|yandexmetrica|yadi|sberbank|sberdevices|sbermarket|sbermegamarket|sbrf|tinkoff|tbank|alfabank|gazprombank|sovcombank|raiffeisen|yoomoney|qiwi|nspk|mironline|ozon|wildberries|wbbasket|wbstatic|avito|lamoda|lmcdn|megamarket|citilink|mvideo|dns-shop|sportmaster|magnit|perekrestok|pyaterochka|vprok|samokat|kuper|kinopoisk|okko|ivi|dzen|rutube|smotrim|kion|litres|zvuk|boosty|vgtrk|gosuslugi|hh|superjob|cian|domclick|drom|2gis|gismeteo|rambler|pikabu|habr|rustore|beeline|megafon|mts|yota|rzd|aeroflot|pochta|cdnvideo|ngenix|selectel|timeweb|drweb|lesta)\\.[a-z]{2,6}$",
+                    "regexp:^(.+\\.)?(lenta|rt|tass|vtb|1cfresh|beget)\\.com$",
+                    "regexp:^(.+\\.)?(vk-cdn|vk-portal)\\.net$",
+                    "regexp:^(.+\\.)?vk-apps\\.com$",
+                    "regexp:^(.+\\.)?premier\\.one$",
+                    "regexp:^(.+\\.)?more\\.tv$",
+                    "regexp:^(.+\\.)?pobeda\\.aero$",
+                    "regexp:^(.+\\.)?yandex\\.com\\.tr$"
+                ],
+                "skipFallback": true
+            },
+            "https://1.1.1.1/dns-query",
+            "https://8.8.8.8/dns-query"
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true,
+                "userLevel": 8
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+                "userLevel": 8
+            },
+            "tag": "http"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10853,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "77.88.8.8",
+                "network": "tcp,udp",
+                "port": 53
+            },
+            "tag": "dns-in"
+        }
+    ],
+    "log": {
+        "loglevel": "warning"
+    },
+    "meta": null,
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "bsplvk.mamutrahal.top",
+                        "port": 443,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "",
+                                "id": "f2f9b2db-b1c1-4b6f-80b5-99787e0a2141"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "xhttp",
+                "security": "tls",
+                "tlsSettings": {
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "enableSessionResumption": false,
+                    "fingerprint": "firefox",
+                    "serverName": "bsplvk.mamutrahal.top"
+                },
+                "xhttpSettings": {
+                    "extra": {
+                        "enableXmux": true,
+                        "mode": "packet-up",
+                        "noGRPCHeader": false,
+                        "noSSEHeader": false,
+                        "scMaxBufferedPosts": 30,
+                        "scMaxEachPostBytes": 1000000,
+                        "scStreamUpServerSecs": "20-80",
+                        "seqKey": "id",
+                        "seqPlacement": "query",
+                        "sessionIDKey": "session",
+                        "sessionIDPlacement": "query",
+                        "uplinkHTTPMethod": "GET",
+                        "xPaddingBytes": "100-1000",
+                        "xPaddingKey": "token",
+                        "xPaddingMethod": "tokenish",
+                        "xPaddingObfsMode": true,
+                        "xPaddingPlacement": "query",
+                        "xmux": {
+                            "cMaxReuseTimes": 100,
+                            "hKeepAlivePeriod": 0,
+                            "hMaxRequestTimes": "600-900",
+                            "hMaxReusableSecs": "1800-3000",
+                            "maxConcurrency": "16-32",
+                            "maxConnections": 0
+                        }
+                    },
+                    "host": "bsplvk.mamutrahal.top",
+                    "mode": "packet-up",
+                    "path": "/static/getFile/video/segment.ts"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        },
+        {
+            "protocol": "dns",
+            "tag": "dns-out"
+        }
+    ],
+    "policy": {
+        "levels": {
+            "8": {
+                "bufferSize": 512,
+                "connIdle": 300,
+                "downlinkOnly": 1,
+                "handshake": 4,
+                "uplinkOnly": 1
+            }
+        },
+        "system": {
+            "statsOutboundDownlink": true,
+            "statsOutboundUplink": true
+        }
     },
     "remarks": "🇵🇱📋 Польша (БС)",
     "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "AsIs",
-      "rules": [
-        {
-          "inboundTag": ["dns-in"],
-          "outboundTag": "dns-out",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:ad.mail.ru",
-            "..."
-          ],
-          "outboundTag": "block",
-          "type": "field"
-        },
-        {
-          "outboundTag": "direct",
-          "protocol": ["bittorrent"],
-          "type": "field"
-        },
-        {
-          "ip": [
-            "127.0.0.0/8",
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "100.64.0.0/10",
-            "224.0.0.0/4",
-            "255.255.255.255/32",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "regexp:\\.(ru|su|moscow|tatar)$",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "proxy",
-          "port": "0-65535",
-          "type": "field"
-        }
-      ]
-    }
-  },
-  {
-    "dns": {
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "https://8.8.8.8/dns-query",
-        "https://1.1.1.1/dns-query",
-        {
-          "address": "https://77.88.8.8/dns-query",
-          "domains": [
-            "regexp:^.*\\.ru$",
-            "regexp:^.*\\.рф$",
-            "regexp:^.*\\.xn--p1ai$",
-            "geosite:category-ru",
-            "geosite:private"
-          ]
-        }
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "destOverride": ["http", "tls", "quic"],
-          "enabled": true,
-          "routeOnly": false
-        },
-        "tag": "http"
-      }
-    ],
-    "log": {
-      "loglevel": "warning"
-    },
-    "meta": {
-      "serverDescription": "При ограничении моб. связи"
-    },
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
+        "domainMatcher": "hybrid",
+        "domainStrategy": "AsIs",
+        "rules": [
             {
-              "address": "st2.cdninkerov.ru",
-              "port": 443,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "security": "tls",
-          "tlsSettings": {
-            "alpn": ["h2", "http/1.1"],
-            "fingerprint": "firefox",
-            "serverName": "st2.cdninkerov.ru"
-          },
-          "xhttpSettings": {
-            "extra": {
-              "noGRPCHeader": true,
-              "scMaxEachPostBytes": "15000-20000",
-              "scMinPostsIntervalMs": "0-5",
-              "seqKey": "part",
-              "seqPlacement": "query",
-              "sessionIDKey": "id",
-              "sessionIDLength": "16-28",
-              "sessionIDPlacement": "query",
-              "sessionIDTable": "Base62",
-              "uplinkChunkSize": "7000-8000",
-              "uplinkDataKey": "dc",
-              "uplinkDataPlacement": "header",
-              "uplinkHTTPMethod": "GET",
-              "xPaddingBytes": "100-400",
-              "xPaddingHeader": "mediaid",
-              "xPaddingKey": "session_token",
-              "xPaddingMethod": "tokenish",
-              "xPaddingObfsMode": true,
-              "xPaddingPlacement": "header",
-              "xmux": {
-                "cMaxReuseTimes": 1000,
-                "hKeepAlivePeriod": 20000,
-                "hMaxRequestTimes": "600-900",
-                "hMaxReusableSecs": "300-600",
-                "maxConcurrency": "16-32"
-              }
+                "inboundTag": [
+                    "dns-in"
+                ],
+                "outboundTag": "dns-out",
+                "type": "field"
             },
-            "host": "st2.cdninkerov.ru",
-            "mode": "packet-up",
-            "path": "/aka/lua/js.ico"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "tag": "block"
-      }
-    ],
-    "remarks": "🇷🇺 📋Россия - АвтоБс",
-    "routing": {
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "domain": [
-            "full:sub.nextgencloud.space",
-            "full:panel.nextgencloud.space",
-            "full:subinkerov.mooo.com",
-            "full:inkerov.mooo.com"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "outboundTag": "block",
-          "protocol": ["bittorrent"],
-          "type": "field"
-        },
-        {
-          "ip": [
-            "77.88.8.8",
-            "77.88.8.1",
-            "0.0.0.0/8",
-            "10.0.0.0/8",
-            "100.64.0.0/10",
-            "127.0.0.0/8",
-            "169.254.0.0/16",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "224.0.0.0/4",
-            "240.0.0.0/4",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:2ip.ru",
-            "domain:2ip.io",
-            "domain:whoer.net",
-            "domain:browserleaks.com",
-            "domain:ipleak.net"
-          ],
-          "outboundTag": "proxy",
-          "type": "field"
-        },
-        {
-          "domain": [
-            "domain:vk.com",
-            "..."
-          ],
-          "outboundTag": "direct",
-          "type": "field"
-        },
-        {
-          "network": "tcp,udp",
-          "outboundTag": "proxy",
-          "type": "field"
-        }
-      ]
+            {
+                "domain": [
+                    "domain:ad.mail.ru",
+                    "domain:addthis.com",
+                    "domain:adfox.ru",
+                    "domain:adfox.yandex.ru",
+                    "domain:adjust.com",
+                    "domain:adlabs.ru",
+                    "domain:adriver.ru",
+                    "domain:ads.mail.ru",
+                    "domain:ads.vk.com",
+                    "domain:ads.yandex.ru",
+                    "domain:adsafeprotected.com",
+                    "domain:adservice.google.com",
+                    "domain:adsmart.ru",
+                    "domain:adsrvr.org",
+                    "domain:adsterra.com",
+                    "domain:adtarget.me",
+                    "domain:amplitude.com",
+                    "domain:an.yandex.ru",
+                    "domain:appmetrica.yandex.ru",
+                    "domain:appsflyer.com",
+                    "domain:apptracer.ru",
+                    "domain:astralab.ru",
+                    "domain:awaps.yandex.net",
+                    "domain:betweendigital.com",
+                    "domain:buzzoola.com",
+                    "domain:calltouch.ru",
+                    "domain:chartbeat.com",
+                    "domain:clarity.ms",
+                    "domain:connect.facebook.net",
+                    "domain:counter.rambler.ru",
+                    "domain:counter.yadro.ru",
+                    "domain:criteo.com",
+                    "domain:criteo.net",
+                    "domain:devtodev.com",
+                    "domain:digitaltarget.ru",
+                    "domain:doubleclick.net",
+                    "domain:doubleverify.com",
+                    "domain:flocktory.com",
+                    "domain:flurry.com",
+                    "domain:getintent.com",
+                    "domain:gnezdo.ru",
+                    "domain:google-analytics.com",
+                    "domain:googleadservices.com",
+                    "domain:googlesyndication.com",
+                    "domain:googletagmanager.com",
+                    "domain:hotjar.com",
+                    "domain:hotlog.ru",
+                    "domain:kochava.com",
+                    "domain:lentainform.com",
+                    "domain:liveinternet.ru",
+                    "domain:luckyads.pro",
+                    "domain:marketgid.com",
+                    "domain:mc.yandex.com",
+                    "domain:mc.yandex.ru",
+                    "domain:mediametrics.ru",
+                    "domain:mediascope.net",
+                    "domain:mediasniper.ru",
+                    "domain:mindbox.ru",
+                    "domain:mixpanel.com",
+                    "domain:moatads.com",
+                    "domain:mytracker.ru",
+                    "domain:openx.net",
+                    "domain:otm-r.com",
+                    "domain:outbrain.com",
+                    "domain:propellerads.com",
+                    "domain:pubmatic.com",
+                    "domain:quantserve.com",
+                    "domain:r.mradx.net",
+                    "domain:relap.io",
+                    "domain:report.appmetrica.yandex.net",
+                    "domain:retailrocket.net",
+                    "domain:retailrocket.ru",
+                    "domain:roistat.com",
+                    "domain:rubiconproject.com",
+                    "domain:rutarget.ru",
+                    "domain:scorecardresearch.com",
+                    "domain:singular.net",
+                    "domain:smi2.ru",
+                    "domain:solocpm.com",
+                    "domain:soloway.ru",
+                    "domain:startup.mobile.yandex.net",
+                    "domain:taboola.com",
+                    "domain:target.my.com",
+                    "domain:tenjin.io",
+                    "domain:tns-counter.ru",
+                    "domain:top-fwz1.mail.ru",
+                    "domain:top.mail.ru",
+                    "domain:top100.rambler.ru",
+                    "domain:tracker.my.com",
+                    "domain:uptolike.com",
+                    "domain:videonow.ru",
+                    "domain:yandexadexchange.net",
+                    "domain:yieldmo.com"
+                ],
+                "outboundTag": "block",
+                "type": "field"
+            },
+            {
+                "outboundTag": "direct",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "type": "field"
+            },
+            {
+                "ip": [
+                    "127.0.0.0/8",
+                    "10.0.0.0/8",
+                    "172.16.0.0/12",
+                    "192.168.0.0/16",
+                    "169.254.0.0/16",
+                    "100.64.0.0/10",
+                    "224.0.0.0/4",
+                    "255.255.255.255/32",
+                    "::1/128",
+                    "fc00::/7",
+                    "fe80::/10"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "regexp:\\.(ru|su|moscow|tatar)$",
+                    "regexp:\\.xn--(p1ai|p1acf|d1acj3b|c1avg|80aswg|80asehdb|80adxhks)$",
+                    "regexp:^(.+\\.)?(vk|vkontakte|vkplay|vkvideo|userapi|vkuser|vkuseraudio|vkuservideo|vkuserlive|mycdn|mradx|yandex|ya|yastatic|yandexcloud|yandexmetrica|yadi|sberbank|sberdevices|sbermarket|sbermegamarket|sbrf|tinkoff|tbank|alfabank|gazprombank|sovcombank|raiffeisen|yoomoney|qiwi|nspk|mironline|ozon|wildberries|wbbasket|wbstatic|avito|lamoda|lmcdn|megamarket|citilink|mvideo|dns-shop|sportmaster|magnit|perekrestok|pyaterochka|vprok|samokat|kuper|kinopoisk|okko|ivi|dzen|rutube|smotrim|kion|litres|zvuk|boosty|vgtrk|gosuslugi|hh|superjob|cian|domclick|drom|2gis|gismeteo|rambler|pikabu|habr|rustore|beeline|megafon|mts|yota|rzd|aeroflot|pochta|cdnvideo|ngenix|selectel|timeweb|drweb|lesta)\\.[a-z]{2,6}$",
+                    "regexp:^(.+\\.)?(lenta|rt|tass|vtb|1cfresh|beget)\\.com$",
+                    "regexp:^(.+\\.)?(vk-cdn|vk-portal)\\.net$",
+                    "regexp:^(.+\\.)?vk-apps\\.com$",
+                    "regexp:^(.+\\.)?premier\\.one$",
+                    "regexp:^(.+\\.)?more\\.tv$",
+                    "regexp:^(.+\\.)?pobeda\\.aero$",
+                    "regexp:^(.+\\.)?yandex\\.com\\.tr$"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "outboundTag": "proxy",
+                "port": "0-65535",
+                "type": "field"
+            }
+        ]
     }
-  }
 ]
