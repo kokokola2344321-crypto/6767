@@ -1749,7 +1749,7 @@
         "tag": "block"
       }
     ],
-    "remarks": "🇷🇺 Россия - Автобс",
+    "remarks": "🇷🇺 📋Россия - АвтоБс",
     "routing": {
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch",
