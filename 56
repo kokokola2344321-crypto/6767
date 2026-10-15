@@ -54,6 +54,197 @@
       "settings": {
         "vnext": [
           {
+            "address": "cz.pythonmakemigreat.wiki",
+            "port": 61374,
+            "users": [
+              {
+                "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "cz.pythonmakemigreat.wiki",
+          "path": "/",
+          "extra": {
+            "xmux": {
+              "maxConnections": 3
+            },
+            "xPaddingBytes": "100-500",
+            "scMaxBufferedPosts": 10,
+            "scMaxEachPostBytes": "500000-1000000",
+            "scMinPostsIntervalMs": "20-40"
+          }
+        },
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "cz.pythonmakemigreat.wiki",
+          "publicKey": "QrNs0ew7snHqLfpVXS9RAhlRzgAzzGZK9fXmDcx9xHI",
+          "shortId": "40a4b9403abe554c",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "tcp",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cz.pythonmakemigreat.wiki",
+            "port": 443,
+            "users": [
+              {
+                "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "cz.pythonmakemigreat.wiki",
+          "publicKey": "YElt1bioVqHB6VIEFCqqiKFm9eLd2W8R8aqZAkkvUHg",
+          "shortId": "2171ecf33df62f7e",
+          "fingerprint": "safari"
+        }
+      }
+    },
+    {
+      "tag": "fb",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "fl.golangwikito.cfd",
+            "port": 61374,
+            "users": [
+              {
+                "id": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "fl.golangwikito.cfd",
+          "path": "/",
+          "extra": {
+            "xmux": {
+              "maxConnections": 3
+            },
+            "xPaddingBytes": "100-500",
+            "scMaxBufferedPosts": 10,
+            "scMaxEachPostBytes": "500000-1000000",
+            "scMinPostsIntervalMs": "20-40"
+          }
+        },
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "fl.golangwikito.cfd",
+          "publicKey": "QrNs0ew7snHqLfpVXS9RAhlRzgAzzGZK9fXmDcx9xHI",
+          "shortId": "40a4b9403abe554c",
+          "spiderX": "/",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "burstObservatory": {
+    "pingConfig": {
+      "timeout": "3s",
+      "interval": "30s",
+      "sampling": 2,
+      "destination": "http://cp.cloudflare.com/generate_204"
+    },
+    "subjectSelector": [
+      "xhttp",
+      "tcp",
+      "fb"
+    ]
+  },
+  "remarks": "🇨🇿 Чехия"
+},
+  {
+  "log": {
+    "loglevel": "warning"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "balancerTag": "PROXY"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "PROXY",
+        "selector": [
+          "xhttp",
+          "tcp"
+        ],
+        "strategy": {
+          "type": "leastPing"
+        },
+        "fallbackTag": "fb"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "IPIfNonMatch"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "xhttp",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
             "address": "be.golangwikito.cfd",
             "port": 61374,
             "users": [
