@@ -6,151 +6,242 @@
   "remarks": "@MaximKey"
 },
 {
-    "dns": {
-        "servers": [
-            "1.1.1.1",
-            "8.8.8.8"
-        ]
-    },
-    "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": true
-            },
-            "tag": "socks"
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": true
-            },
-            "tag": "http"
-        }
+  "api": {
+    "listen": "[::1]:10085",
+    "services": [
+      "StatsService"
     ],
-    "log": {
-        "loglevel": "warning"
+    "tag": "api"
+  },
+  "dns": {
+    "hosts": {
+      "8.8.8.8": "8.8.8.8",
+      "77.88.8.8": "77.88.8.8",
+      "domain:googleapis.cn": "googleapis.com",
+      "lkfl2.nalog.ru": "213.24.64.175",
+      "lknpd.nalog.ru": "213.24.64.181"
     },
-    "meta": null,
-    "outbounds": [
-        {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "bc4a55x.es4.h1clayd.click",
-                        "port": 443,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "id": "0827b9ff-3db1-4fd0-bc6c-8afc2a635573"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "xhttp",
-                "realitySettings": {
-                    "fingerprint": "firefox",
-                    "publicKey": "LX_KzPtEhcscilQ-SbDm16M9r3VVjptsVlhE0yTjYA8",
-                    "serverName": "bc4a55x.es4.h1clayd.click",
-                    "shortId": "0d061d3f2e4cef5f",
-                    "spiderX": "/"
-                },
-                "security": "reality",
-                "xhttpSettings": {
-                    "host": "",
-                    "mode": "auto",
-                    "path": "/536c1fa6d425"
-                }
-            },
-            "tag": "proxy"
-        },
-        {
-            "protocol": "freedom",
-            "tag": "direct"
-        }
-    ],
-    "remarks": "🇪🇸 РАБОТАЕТ ДО 26.10",
-    "routing": {
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "domain": [
-                    "domain:ru",
-                    "domain:su",
-                    "domain:xn--p1ai",
-                    "domain:vk.com",
-                    "domain:vk.me",
-                    "domain:userapi.com",
-                    "domain:vkuser.net",
-                    "domain:vk-cdn.net",
-                    "domain:vkuseraudio.net",
-                    "domain:vkuservideo.net",
-                    "domain:mycdn.me",
-                    "domain:yandex.net",
-                    "domain:yandex.com",
-                    "domain:yastatic.net",
-                    "domain:yandex.cloud",
-                    "domain:yandexcloud.net",
-                    "domain:sberbank.com",
-                    "domain:ozonusercontent.com",
-                    "domain:wbstatic.net",
-                    "domain:avito.st",
-                    "domain:2gis.com"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "ip": [
-                    "0.0.0.0/8",
-                    "10.0.0.0/8",
-                    "100.64.0.0/10",
-                    "127.0.0.0/8",
-                    "169.254.0.0/16",
-                    "172.16.0.0/12",
-                    "192.0.0.0/24",
-                    "192.0.2.0/24",
-                    "192.88.99.0/24",
-                    "192.168.0.0/16",
-                    "198.18.0.0/15",
-                    "198.51.100.0/24",
-                    "203.0.113.0/24",
-                    "224.0.0.0/3",
-                    "::/127",
-                    "fc00::/7",
-                    "fe80::/10",
-                    "ff00::/8",
-                    "geoip:ru"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            }
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "https://8.8.8.8/dns-query",
+      {
+        "address": "https://8.8.8.8/dns-query",
+        "domains": [
+          "geosite:google-play",
+          "geosite:github",
+          "geosite:twitch-ads",
+          "geosite:youtube",
+          "geosite:telegram"
         ]
+      },
+      {
+        "address": "https://77.88.8.8/dns-query",
+        "domains": [
+          "geosite:private",
+          "geosite:category-ru",
+          "geosite:whitelist",
+          "geosite:microsoft",
+          "geosite:apple",
+          "geosite:epicgames",
+          "geosite:riot",
+          "geosite:escapefromtarkov",
+          "geosite:steam",
+          "geosite:twitch",
+          "geosite:pinterest",
+          "geosite:faceit"
+        ]
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "accounts": [
+          {
+            "user": "happ_user"
+          }
+        ],
+        "auth": "password",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
     }
+  ],
+  "log": {
+    "access": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/access/access_log.txt",
+    "dnsLog": true,
+    "error": "/storage/emulated/0/Android/data/com.happproxy/files/assets/logs/error/1792869837427_error_log.txt",
+    "loglevel": "debug"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "address": "2.26.255.91",
+        "encryption": "none",
+        "flow": "xtls-rprx-vision",
+        "id": "9dafb0a6-c5f0-47a4-932c-fd41150ec144",
+        "level": 8,
+        "port": 25081,
+        "security": "auto"
+      },
+      "streamSettings": {
+        "finalmask": {
+          "tcp": [
+            {
+              "settings": {
+                "delay": "10-20",
+                "length": "50-100",
+                "packets": "tlshello",
+                "maxSplit": "100-200"
+              },
+              "type": "fragment"
+            }
+          ],
+          "udp": [
+            {
+              "settings": {
+                "noise": [
+                  {
+                    "rand": "1-8192"
+                  }
+                ]
+              },
+              "type": "noise"
+            }
+          ]
+        },
+        "network": "tcp",
+        "realitySettings": {
+          "fingerprint": "qq",
+          "publicKey": "__LcoCFYnWry-Z1fdAi42CtDaIAZ7Ae1NMYp42Qf6l0",
+          "serverName": "gta5-servers.top",
+          "shortId": "4feabc4c286820d3",
+          "show": false
+        },
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "remarks": "🇹🇷 Turkey Proxy",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "proxy",
+        "port": "443"
+      },
+      {
+        "ip": [
+          "77.88.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "443"
+      },
+      {
+        "domain": [
+          "geosite:win-spy",
+          "geosite:torrent",
+          "geosite:category-ads"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "domain": [
+          "geosite:google-play",
+          "geosite:github",
+          "geosite:twitch-ads",
+          "geosite:youtube",
+          "geosite:telegram"
+        ],
+        "outboundTag": "proxy"
+      },
+      {
+        "domain": [
+          "geosite:private",
+          "geosite:category-ru",
+          "geosite:whitelist",
+          "geosite:microsoft",
+          "geosite:apple",
+          "geosite:epicgames",
+          "geosite:riot",
+          "geosite:escapefromtarkov",
+          "geosite:steam",
+          "geosite:twitch",
+          "geosite:pinterest",
+          "geosite:faceit"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "ip": [
+          "geoip:private",
+          "geoip:direct"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "stats": {}
 }
 ]
