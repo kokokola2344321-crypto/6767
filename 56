@@ -5,5 +5,150 @@
 {
   "remarks": "@MaximKey"
 },
+{
+    "dns": {
+        "queryStrategy": "UseIPv4",
+        "servers": [
+            "https://1.1.1.1/dns-query",
+            "1.1.1.1"
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+                "allowTransparent": false
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true,
+                "routeOnly": false
+            },
+            "tag": "http"
+        }
+    ],
+    "meta": null,
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "193.233.90.170",
+                        "port": 2055,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "",
+                                "id": "ad35a905-d006-40d5-8bd8-3157e14bdff4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "xhttp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "Ktr2aHDMDJi5b-MExqrRuhYvzhe2lcWhj6VUmnaD4W4",
+                    "serverName": "max.ru",
+                    "shortId": "40d61a41eec90be5",
+                    "spiderX": "/"
+                },
+                "security": "reality",
+                "xhttpSettings": {
+                    "host": "",
+                    "mode": "auto",
+                    "path": "/inkxhttp"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "streamSettings": {
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "remarks": "🇨🇭 Швейцария XHTTP",
+    "routing": {
+        "domainMatcher": "hybrid",
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "domain": [
+                    "full:sub.nextgencloud.space",
+                    "full:panel.nextgencloud.space",
+                    "full:subinkerov.mooo.com",
+                    "full:inkerov.mooo.com"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "outboundTag": "direct",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "domain:mtalk.google.com",
+                    "domain:push.apple.com",
+                    "domain:api.push.apple.com",
+                    "domain:push-apple.com.akadns.net",
+                    "regexp:.*-courier.push.apple.com$"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "ip": [
+                    "17.0.0.0/8"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            },
+            {
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "direct",
+                "type": "field"
+            }
+        ]
+    }
+}
 
 ]
